@@ -10,12 +10,5 @@ public:
 	virtual void Render() override;
 
 private:
-	void RenderBackground();
 
-private:
-	Sprite* backgrounds[3];
-
-	class Player* player;
-	class Bullet* bullet;
-	class Fire* fire;
 };

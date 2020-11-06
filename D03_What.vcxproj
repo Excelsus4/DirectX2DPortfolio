@@ -147,20 +147,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Objects\Background.cpp" />
-    <ClCompile Include="Objects\Bullet.cpp" />
-    <ClCompile Include="Objects\Fire.cpp" />
-    <ClCompile Include="Objects\Marker.cpp" />
-    <ClCompile Include="Objects\Player.cpp" />
+    <ClCompile Include="ECS\AnimRenderer.cpp" />
+    <ClCompile Include="ECS\Entity.cpp" />
+    <ClCompile Include="ECS\Transform.cpp" />
+    <ClCompile Include="ECS\World.cpp" />
+    <ClCompile Include="Objects\Apache.cpp" />
+    <ClCompile Include="Prefab\Helicopter.cpp" />
     <ClCompile Include="Renders\Animation.cpp" />
+    <ClCompile Include="Renders\AnimationPool.cpp" />
     <ClCompile Include="Renders\Clip.cpp" />
     <ClCompile Include="Renders\Rect.cpp" />
     <ClCompile Include="Renders\Shader.cpp" />
     <ClCompile Include="Renders\Sprite.cpp" />
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="Scenes\Sonic.cpp" />
     <ClCompile Include="Scenes\Stage1.cpp" />
-    <ClCompile Include="Scenes\Stage2.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
@@ -179,20 +179,21 @@
     <None Include="Utilities\Xml.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Objects\Background.h" />
-    <ClInclude Include="Objects\Bullet.h" />
-    <ClInclude Include="Objects\Fire.h" />
-    <ClInclude Include="Objects\Marker.h" />
-    <ClInclude Include="Objects\Player.h" />
+    <ClInclude Include="ECS\AnimRenderer.h" />
+    <ClInclude Include="ECS\Component.h" />
+    <ClInclude Include="ECS\Entity.h" />
+    <ClInclude Include="ECS\Transform.h" />
+    <ClInclude Include="ECS\World.h" />
+    <ClInclude Include="Objects\Apache.h" />
+    <ClInclude Include="Prefab\Helicopter.h" />
     <ClInclude Include="Renders\Animation.h" />
+    <ClInclude Include="Renders\AnimationPool.h" />
     <ClInclude Include="Renders\Clip.h" />
     <ClInclude Include="Renders\Rect.h" />
     <ClInclude Include="Renders\Shader.h" />
     <ClInclude Include="Renders\Sprite.h" />
     <ClInclude Include="Scenes\Scene.h" />
-    <ClInclude Include="Scenes\Sonic.h" />
     <ClInclude Include="Scenes\Stage1.h" />
-    <ClInclude Include="Scenes\Stage2.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Systems\CMouse.h" />
     <ClInclude Include="Systems\Device.h" />

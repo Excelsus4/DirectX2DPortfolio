@@ -4,8 +4,7 @@
 #include "./Viewer/Freedom.h"
 
 #include "./Scenes/Stage1.h"
-#include "./Scenes/Stage2.h"
-#include "./Scenes/Sonic.h"
+#include "./Renders/AnimationPool.h"
 
 SceneValues* values;
 vector<Scene*> scenes;
@@ -13,9 +12,10 @@ vector<Scene*> scenes;
 void InitScene() {
 	values = new SceneValues();
 	values->MainCamera = new Freedom();
+	values->Pool = new AnimationPool();
 	D3DXMatrixIdentity(&values->Projection);
 
-	scenes.push_back(new Sonic(values));
+	scenes.push_back(new Stage1(values));
 }
 
 void DestroyScene(){
@@ -29,11 +29,6 @@ void DestroyScene(){
 D3DXVECTOR2 horizontal(0, 800), vertical(0, 600);
 void Update() {
 	values->MainCamera->Update();
-
-	/*horizontal.x = (float)Width*-0.5f;
-	horizontal.y = (float)Width* 0.5f;
-	vertical.x = (float)Height*-0.5f;
-	vertical.y = (float)Height* 0.5f;*/
 
 	D3DXMatrixOrthoOffCenterLH(&values->Projection, horizontal.x, horizontal.y, vertical.x, vertical.y, -10, 10);
 
@@ -51,7 +46,7 @@ void Update() {
 }
 
 void Render() {
-	D3DXCOLOR bgColor = D3DXCOLOR(0.1f, 0.1f, 0.1f, 1);
+	D3DXCOLOR bgColor = D3DXCOLOR(0.91f, 0.91f, 0.91f, 1);
 	DeviceContext->ClearRenderTargetView(RTV, (float*)bgColor);
 	{
 		ImGui::SliderFloat2("Horizontal", (float*)&horizontal, -1000, 1000);

@@ -1,8 +1,10 @@
 #pragma once
 #include "stdafx.h"
 #include "Viewer/Camera.h"
+#include "Renders/AnimationPool.h"
 
 struct SceneValues {
+	AnimationPool* Pool;
 	class Camera* MainCamera;
 	D3DXMATRIX Projection;
 };
@@ -19,4 +21,5 @@ public:
 
 protected:
 	SceneValues* values;
+	class World* entities;
 };

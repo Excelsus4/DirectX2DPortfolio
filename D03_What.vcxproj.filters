@@ -26,12 +26,6 @@
     <ClCompile Include="Systems\Device.cpp">
       <Filter>Systems</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\Background.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\Bullet.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Renders\Clip.cpp">
       <Filter>Renders</Filter>
     </ClCompile>
@@ -43,9 +37,6 @@
     </ClCompile>
     <ClCompile Include="Renders\Animation.cpp">
       <Filter>Renders</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\Player.cpp">
-      <Filter>Objects</Filter>
     </ClCompile>
     <ClCompile Include="Viewer\Camera.cpp">
       <Filter>Viewer</Filter>
@@ -63,20 +54,29 @@
     <ClCompile Include="Scenes\Stage1.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\Stage2.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\Fire.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Scenes\Sonic.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Systems\CMouse.cpp">
       <Filter>Systems</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\Marker.cpp">
+    <ClCompile Include="ECS\Entity.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\World.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Apache.cpp">
       <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Transform.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\AnimRenderer.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\AnimationPool.cpp">
+      <Filter>Renders</Filter>
+    </ClCompile>
+    <ClCompile Include="Prefab\Helicopter.cpp">
+      <Filter>Prefab</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,12 +105,6 @@
     <ClInclude Include="Systems\Device.h">
       <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Background.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Objects\Bullet.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Renders\Clip.h">
       <Filter>Renders</Filter>
     </ClInclude>
@@ -122,9 +116,6 @@
     </ClInclude>
     <ClInclude Include="Renders\Animation.h">
       <Filter>Renders</Filter>
-    </ClInclude>
-    <ClInclude Include="Objects\Player.h">
-      <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="Viewer\Camera.h">
       <Filter>Viewer</Filter>
@@ -147,20 +138,32 @@
     <ClInclude Include="Scenes\Stage1.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\Stage2.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="Objects\Fire.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenes\Sonic.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="Systems\CMouse.h">
       <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Marker.h">
+    <ClInclude Include="ECS\Component.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Entity.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\World.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Apache.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Transform.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\AnimRenderer.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\AnimationPool.h">
+      <Filter>Renders</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefab\Helicopter.h">
+      <Filter>Prefab</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +184,12 @@
     </Filter>
     <Filter Include="Scenes">
       <UniqueIdentifier>{540603d4-6847-4320-a841-0639e03f7c54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ECS">
+      <UniqueIdentifier>{800f4866-7e8f-408b-a199-681ba2008ca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Prefab">
+      <UniqueIdentifier>{d54addaf-d192-4704-94c7-2488065231f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
