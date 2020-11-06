@@ -10,6 +10,7 @@ public:
 	virtual void Update(D3DXMATRIX& V, D3DXMATRIX& P) {}
 	virtual void Render() {}
 
+	virtual void UpdateTransform(class Transform* transform) {}
 protected:
 	class Entity* parent;
 };

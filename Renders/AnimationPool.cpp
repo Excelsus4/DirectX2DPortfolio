@@ -75,7 +75,7 @@ Animation * AnimationPool::CreateAnim(string key)
 
 		{
 			Clip* clip = new Clip(PlayMode::Loop);
-			for (int i = 0; i < 10; ++i) {
+			for (int i = 9; i >= 0; --i) {
 				clip->AddFrame(new Sprite(spriteFile, shaderFile, i * 64, 64, i*64+64, 128), 0.05f);
 			}
 			anim->AddClip(clip);

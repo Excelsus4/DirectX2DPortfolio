@@ -18,6 +18,9 @@ void Entity::PhysicsUpdate(World * world)
 {
 	for (auto c : components)
 		c->PhysicsUpdate(world);
+
+	for (auto c : components)
+		c->UpdateTransform(GetTransform());
 }
 
 void Entity::Update(D3DXMATRIX & V, D3DXMATRIX & P)

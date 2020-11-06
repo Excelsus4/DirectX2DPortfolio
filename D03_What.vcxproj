@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="ECS\AnimRenderer.cpp" />
     <ClCompile Include="ECS\Entity.cpp" />
+    <ClCompile Include="ECS\PlayerController.cpp" />
     <ClCompile Include="ECS\Transform.cpp" />
     <ClCompile Include="ECS\World.cpp" />
     <ClCompile Include="Objects\Apache.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="ECS\AnimRenderer.h" />
     <ClInclude Include="ECS\Component.h" />
     <ClInclude Include="ECS\Entity.h" />
+    <ClInclude Include="ECS\PlayerController.h" />
     <ClInclude Include="ECS\Transform.h" />
     <ClInclude Include="ECS\World.h" />
     <ClInclude Include="Objects\Apache.h" />

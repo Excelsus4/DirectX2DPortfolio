@@ -3,12 +3,15 @@
 #include "Viewer/Following.h"
 #include "ECS/World.h"
 #include "Prefab/Helicopter.h"
+#include "ECS/Transform.h"
 
 Stage1::Stage1(SceneValues * values) :
 	Scene(values)
 {
 	entities = new World();
-	entities->entity.push_back(new Helicopter(values->Pool));
+	Entity* temp = new Helicopter(values->Pool);
+	entities->entity.push_back(temp);
+	temp->GetTransform()->RotateRad(D3DXVECTOR3(0,0,Math::ToRadian(180.0f)));
 }
 
 Stage1::~Stage1()

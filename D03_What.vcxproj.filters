@@ -78,6 +78,9 @@
     <ClCompile Include="Prefab\Helicopter.cpp">
       <Filter>Prefab</Filter>
     </ClCompile>
+    <ClCompile Include="ECS\PlayerController.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -164,6 +167,9 @@
     </ClInclude>
     <ClInclude Include="Prefab\Helicopter.h">
       <Filter>Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\PlayerController.h">
+      <Filter>ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "AnimRenderer.h"
+#include "Transform.h"
 
 AnimRenderer::AnimRenderer(class Entity* entity):
 	Component(entity), anim(nullptr)
@@ -18,6 +19,13 @@ void AnimRenderer::Update(D3DXMATRIX & V, D3DXMATRIX & P)
 void AnimRenderer::Render()
 {
 	anim->Render();
+}
+
+void AnimRenderer::UpdateTransform(Transform * transform)
+{
+	anim->Position(transform->Position());
+	anim->Rotation(transform->RotationRad());
+	anim->Scale(transform->Scale());
 }
 
 Animation* AnimRenderer::SetAnim(Animation* a)

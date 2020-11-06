@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Helicopter.h"
 #include "ECS/AnimRenderer.h"
+#include "ECS/PlayerController.h"
 
 Helicopter::Helicopter(AnimationPool * pool)
 {
@@ -18,6 +19,9 @@ Helicopter::Helicopter(AnimationPool * pool)
 	animRenderer->SetAnim(pool->GetAnim("Apache_Rotor_FX"));
 	animRenderer->PlayAnim(0);
 	components.push_back(animRenderer);
+
+	PlayerController* pCon = new PlayerController(this);
+	components.push_back(pCon);
 }
 
 Helicopter::~Helicopter()
