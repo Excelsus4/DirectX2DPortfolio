@@ -39,7 +39,7 @@ void Sprite::Update(D3DXMATRIX & V, D3DXMATRIX & P)
 	D3DXMATRIX S, R, T;
 	D3DXMatrixScaling(&S, scale.x * textureSize.x, scale.y * textureSize.y, 1.0f);
 	D3DXMatrixRotationYawPitchRoll(&R, rotation.y, rotation.x, rotation.z);
-	D3DXMatrixTranslation(&T, position.x + scale.x * 0.5f, position.y + scale.y*0.5f, 0.0f);
+	D3DXMatrixTranslation(&T, floorf(position.x)+0.5f + scale.x * 0.5f, floorf(position.y)+0.5f + scale.y*0.5f, 0.0f);
 	world = S * R * T;
 
 	shader->AsMatrix("World")->SetMatrix(world);
