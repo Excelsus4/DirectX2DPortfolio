@@ -2,6 +2,8 @@
 #include "PlayerController.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Prefab/Hydra.h"
+#include "World.h"
 
 PlayerController::PlayerController(Entity * entity):
 	Component(entity), speed(100.0f), roll(0.4f), pitch(0.3f)
@@ -40,7 +42,21 @@ void PlayerController::PhysicsUpdate(World * world)
 	else {
 		rotation.x = 0.0f;
 	}
-
 	transform->RotationRad(rotation);
 
+	// A Key creates Hellfire
+	if (Key->Down(0x41)) {
+	}
+
+	// S Key creates Hydra
+	if (Key->Down(0x53)) {
+		Entity* temp = new Hydra(world->pool);
+		world->instantiateBuffer.push_back(temp);
+		temp->GetTransform()->Acceleration(D3DXVECTOR2(0, 300.0f));
+		temp->GetTransform()->Position(transform->Position());
+	}
+
+	// D Key creates Bullet
+	if (Key->Down(0x44)) {
+	}
 }

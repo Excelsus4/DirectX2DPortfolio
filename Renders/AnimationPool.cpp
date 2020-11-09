@@ -23,6 +23,9 @@ void AnimationPool::Initialize()
 	InitializeAnim("Apache_Body", 1);
 	InitializeAnim("Apache_Rotor", 1);
 	InitializeAnim("Apache_Rotor_FX", 1);
+
+	InitializeAnim("Missile_Hydra", 16);
+	InitializeAnim("Missile_Hellfire", 4);
 }
 
 void AnimationPool::InitializeAnim(string key, size_t amount)
@@ -76,7 +79,9 @@ Animation * AnimationPool::CreateAnim(string key)
 		{
 			Clip* clip = new Clip(PlayMode::Loop);
 			for (int i = 9; i >= 0; --i) {
-				clip->AddFrame(new Sprite(spriteFile, shaderFile, i * 64, 64, i*64+64, 128), 0.05f);
+				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
+					i * 64.0f, 64.0f, i*64.0f+64.0f, 128.0f
+				), 0.05f);
 			}
 			anim->AddClip(clip);
 		}
@@ -91,7 +96,43 @@ Animation * AnimationPool::CreateAnim(string key)
 		{
 			Clip* clip = new Clip(PlayMode::Loop);
 			for (int i = 0; i < 8; ++i) {
-				clip->AddFrame(new Sprite(spriteFile, shaderFile, i * 64, 128, i * 64 + 64, 192), 0.1f);
+				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
+					i * 64.0f, 128.0f, i * 64.0f + 64.0f, 192.0f
+				), 0.1f);
+			}
+			anim->AddClip(clip);
+		}
+	}
+	else if (key == "Missile_Hydra") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Missile_64.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::Loop);
+			for (int i = 0; i < 2; ++i) {
+				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
+					192.0f, i * 64.0f, 256.0f, i * 64.0f + 64.0f
+				), 0.1f);
+			}
+			anim->AddClip(clip);
+		}
+	}
+	else if (key == "Missile_Hellfire") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Missile_64.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::End);
+			for (int i = 0; i < 2; ++i) {
+				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
+					384.0f, i * 64.0f, 448.0f, i * 64.0f + 64.0f
+				), 0.3f);
 			}
 			anim->AddClip(clip);
 		}

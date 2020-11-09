@@ -19,5 +19,4 @@ private:
 
 private:
 	map<string, vector<Animation*>*> pool;
-
 };

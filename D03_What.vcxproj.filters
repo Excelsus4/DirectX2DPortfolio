@@ -63,9 +63,6 @@
     <ClCompile Include="ECS\World.cpp">
       <Filter>ECS</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\Apache.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="ECS\Transform.cpp">
       <Filter>ECS</Filter>
     </ClCompile>
@@ -80,6 +77,12 @@
     </ClCompile>
     <ClCompile Include="ECS\PlayerController.cpp">
       <Filter>ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Prefab\Hydra.cpp">
+      <Filter>Prefab</Filter>
+    </ClCompile>
+    <ClCompile Include="Prefab\Hellfire.cpp">
+      <Filter>Prefab</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -153,9 +156,6 @@
     <ClInclude Include="ECS\World.h">
       <Filter>ECS</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Apache.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
     <ClInclude Include="ECS\Transform.h">
       <Filter>ECS</Filter>
     </ClInclude>
@@ -171,6 +171,12 @@
     <ClInclude Include="ECS\PlayerController.h">
       <Filter>ECS</Filter>
     </ClInclude>
+    <ClInclude Include="Prefab\Hydra.h">
+      <Filter>Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefab\Hellfire.h">
+      <Filter>Prefab</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Systems">
@@ -181,9 +187,6 @@
     </Filter>
     <Filter Include="Utilities">
       <UniqueIdentifier>{c97a47b7-f6fb-4a8d-8264-94c40297e011}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Objects">
-      <UniqueIdentifier>{7474e0b7-ae15-41b7-8f0c-c1dade6a655d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Viewer">
       <UniqueIdentifier>{f39a027d-a47c-422f-a184-a4bba3594d64}</UniqueIdentifier>
