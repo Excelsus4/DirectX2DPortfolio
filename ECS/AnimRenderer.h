@@ -9,6 +9,8 @@ public:
 
 	virtual void Update(D3DXMATRIX& V, D3DXMATRIX& P) override;
 	virtual void Render() override;
+
+	virtual void Recycle(class World* world) override;
 	virtual void UpdateTransform(class Transform* transform) override;
 
 	virtual Animation* SetAnim(Animation* a);

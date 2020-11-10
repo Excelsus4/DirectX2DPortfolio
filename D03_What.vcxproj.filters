@@ -84,6 +84,9 @@
     <ClCompile Include="Prefab\Hellfire.cpp">
       <Filter>Prefab</Filter>
     </ClCompile>
+    <ClCompile Include="ECS\Recycler.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -176,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="Prefab\Hellfire.h">
       <Filter>Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Recycler.h">
+      <Filter>ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -21,5 +21,5 @@ public:
 
 protected:
 	SceneValues* values;
-	class World* entities;
+	class World* world;
 };

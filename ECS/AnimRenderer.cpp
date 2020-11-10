@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "AnimRenderer.h"
 #include "Transform.h"
+#include "World.h"
+#include "Renders/AnimationPool.h"
 
 AnimRenderer::AnimRenderer(class Entity* entity):
 	Component(entity), anim(nullptr)
@@ -19,6 +21,11 @@ void AnimRenderer::Update(D3DXMATRIX & V, D3DXMATRIX & P)
 void AnimRenderer::Render()
 {
 	anim->Render();
+}
+
+void AnimRenderer::Recycle(World * world)
+{
+	world->pool->Recycle(anim);
 }
 
 void AnimRenderer::UpdateTransform(Transform * transform)

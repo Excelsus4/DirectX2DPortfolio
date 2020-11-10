@@ -150,6 +150,7 @@
     <ClCompile Include="ECS\AnimRenderer.cpp" />
     <ClCompile Include="ECS\Entity.cpp" />
     <ClCompile Include="ECS\PlayerController.cpp" />
+    <ClCompile Include="ECS\Recycler.cpp" />
     <ClCompile Include="ECS\Transform.cpp" />
     <ClCompile Include="ECS\World.cpp" />
     <ClCompile Include="Prefab\Helicopter.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="ECS\Component.h" />
     <ClInclude Include="ECS\Entity.h" />
     <ClInclude Include="ECS\PlayerController.h" />
+    <ClInclude Include="ECS\Recycler.h" />
     <ClInclude Include="ECS\Transform.h" />
     <ClInclude Include="ECS\World.h" />
     <ClInclude Include="Prefab\Helicopter.h" />

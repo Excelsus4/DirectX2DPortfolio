@@ -11,7 +11,7 @@ Entity::Entity()
 Entity::~Entity()
 {
 	for (auto c : components)
-		delete c;
+		SAFE_DELETE(c);
 }
 
 void Entity::PhysicsUpdate(World * world)
@@ -33,6 +33,13 @@ void Entity::Render()
 {
 	for (auto c : components)
 		c->Render();
+}
+
+void Entity::Recycle(World * world)
+{
+	// find recycler component and call it's recycle
+	for (auto c : components)
+		c->Recycle(world);
 }
 
 Transform * Entity::GetTransform() const

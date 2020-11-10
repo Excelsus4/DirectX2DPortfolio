@@ -10,38 +10,60 @@
 Stage1::Stage1(SceneValues * values) :
 	Scene(values)
 {
-	entities = new World();
-	entities->pool = values->Pool;
+	world = new World();
+	world->pool = values->Pool;
 
 	Entity* temp = new Helicopter(values->Pool);
-	entities->entity.push_back(temp);
+	world->entity.push_back(temp);
 	temp->GetTransform()->RotateRad(D3DXVECTOR3(0,0,Math::ToRadian(180.0f)));
 }
 
 Stage1::~Stage1()
 {
-	SAFE_DELETE(entities);
+	SAFE_DELETE(world);
 }
 
 void Stage1::Update()
 {
-	for (auto iter = entities->instantiateBuffer.begin(); iter != entities->instantiateBuffer.end();) {
-		entities->entity.push_back(*iter);
-		iter = entities->instantiateBuffer.erase(iter);
+	// Recycle Code...
+	for (auto iter = world->trashBuffer.begin(); iter != world->trashBuffer.end();) {
+		// find iter in entities and recycle...
+		for (auto entityIter = world->entity.begin(); entityIter != world->entity.end();) {
+			if (*iter == *entityIter) {
+				(*iter)->Recycle(world);
+				SAFE_DELETE(*iter);
+
+				entityIter = world->entity.erase(entityIter);
+				iter = world->trashBuffer.erase(iter);
+				break;
+			}
+			else {
+				entityIter++;
+			}
+		}
 	}
 
-	for (auto e : entities->entity)
-		e->PhysicsUpdate(entities);
+	// Instantiation Code...
+	for (auto iter = world->instantiateBuffer.begin(); iter != world->instantiateBuffer.end();) {
+		world->entity.push_back(*iter);
+		iter = world->instantiateBuffer.erase(iter);
+	}
 
+	// PHYSICS!!!
+	for (auto e : world->entity)
+		e->PhysicsUpdate(world);
+
+	// UPDATE
 	D3DXMATRIX V = values->MainCamera->View();
 	D3DXMATRIX P = values->Projection;
 
-	for (auto e : entities->entity)
+	for (auto e : world->entity)
 		e->Update(V, P);
 }
 
 void Stage1::Render()
 {
-	for (auto e : entities->entity)
+	// RENDER
+	for (auto e : world->entity)
 		e->Render();
 }
