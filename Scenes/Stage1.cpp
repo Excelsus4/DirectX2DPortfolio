@@ -5,7 +5,7 @@
 #include "ECS/Transform.h"
 
 #include "Prefab/Helicopter.h"
-#include "Prefab/Hydra.h"
+#include "Prefab/Buildings/BuildingSmall01.h"
 
 Stage1::Stage1(SceneValues * values) :
 	Scene(values)
@@ -14,8 +14,11 @@ Stage1::Stage1(SceneValues * values) :
 	world->pool = values->Pool;
 
 	Entity* temp = new Helicopter(values->Pool);
+	temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(180.0f)));
 	world->entity.push_back(temp);
-	temp->GetTransform()->RotateRad(D3DXVECTOR3(0,0,Math::ToRadian(180.0f)));
+
+	temp = new BuildingSmall01(values->Pool);
+	world->entity.push_back(temp);
 }
 
 Stage1::~Stage1()

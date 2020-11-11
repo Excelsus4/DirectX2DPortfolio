@@ -153,6 +153,7 @@
     <ClCompile Include="ECS\Recycler.cpp" />
     <ClCompile Include="ECS\Transform.cpp" />
     <ClCompile Include="ECS\World.cpp" />
+    <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp" />
     <ClCompile Include="Prefab\Helicopter.cpp" />
     <ClCompile Include="Prefab\Hellfire.cpp" />
     <ClCompile Include="Prefab\Hydra.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="ECS\Recycler.h" />
     <ClInclude Include="ECS\Transform.h" />
     <ClInclude Include="ECS\World.h" />
+    <ClInclude Include="Prefab\Buildings\BuildingSmall01.h" />
     <ClInclude Include="Prefab\Helicopter.h" />
     <ClInclude Include="Prefab\Hellfire.h" />
     <ClInclude Include="Prefab\Hydra.h" />

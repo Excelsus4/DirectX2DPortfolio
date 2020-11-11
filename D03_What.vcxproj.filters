@@ -87,6 +87,9 @@
     <ClCompile Include="ECS\Recycler.cpp">
       <Filter>ECS</Filter>
     </ClCompile>
+    <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp">
+      <Filter>Prefab\Buildings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -183,6 +186,9 @@
     <ClInclude Include="ECS\Recycler.h">
       <Filter>ECS</Filter>
     </ClInclude>
+    <ClInclude Include="Prefab\Buildings\BuildingSmall01.h">
+      <Filter>Prefab\Buildings</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Systems">
@@ -205,6 +211,9 @@
     </Filter>
     <Filter Include="Prefab">
       <UniqueIdentifier>{d54addaf-d192-4704-94c7-2488065231f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Prefab\Buildings">
+      <UniqueIdentifier>{a74ff353-17a0-493d-9857-af14cde0262e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -46,7 +46,7 @@ void Update() {
 }
 
 void Render() {
-	D3DXCOLOR bgColor = D3DXCOLOR(0.91f, 0.91f, 0.91f, 1);
+	D3DXCOLOR bgColor = D3DXCOLOR(0.18f, 0.26f, 0.26f, 1);
 	DeviceContext->ClearRenderTargetView(RTV, (float*)bgColor);
 	{
 		ImGui::SliderFloat2("Horizontal", (float*)&horizontal, -1000, 1000);
