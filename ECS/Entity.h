@@ -2,7 +2,7 @@
 
 class Entity {
 public:
-	Entity();
+	Entity(int layer);
 	virtual ~Entity();
 
 	virtual void PhysicsUpdate(class World* world);
@@ -13,6 +13,7 @@ public:
 	class Transform* GetTransform() const;
 
 public:
+	int layer;
 	vector<class Component*> components;
 };
 

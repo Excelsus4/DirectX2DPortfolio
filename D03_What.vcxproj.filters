@@ -90,6 +90,12 @@
     <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp">
       <Filter>Prefab\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="ECS\Damager.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Layer.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -188,6 +194,12 @@
     </ClInclude>
     <ClInclude Include="Prefab\Buildings\BuildingSmall01.h">
       <Filter>Prefab\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Damager.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Layer.h">
+      <Filter>ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

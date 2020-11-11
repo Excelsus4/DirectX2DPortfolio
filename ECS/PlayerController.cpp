@@ -51,7 +51,7 @@ void PlayerController::PhysicsUpdate(World * world)
 	// S Key creates Hydra
 	if (Key->Down(0x53)) {
 		Entity* temp = new Hydra(world->pool);
-		world->instantiateBuffer.push_back(temp);
+		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
 		temp->GetTransform()->Acceleration(D3DXVECTOR2(0, 300.0f));
 		temp->GetTransform()->Position(transform->Position());
 	}

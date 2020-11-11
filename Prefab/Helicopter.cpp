@@ -2,8 +2,10 @@
 #include "Helicopter.h"
 #include "ECS/AnimRenderer.h"
 #include "ECS/PlayerController.h"
+#include "ECS/Layer.h"
 
-Helicopter::Helicopter(AnimationPool * pool)
+Helicopter::Helicopter(AnimationPool * pool):
+	Entity(Layer::GetLayerIDX("User"))
 {
 	AnimRenderer* animRenderer = new AnimRenderer(this);
 	animRenderer->SetAnim(pool->GetAnim("Apache_Body"));

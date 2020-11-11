@@ -1,15 +1,19 @@
 #pragma once
+#include "Layer.h"
 
 class World {
 public:
 	World();
 	virtual ~World();
 
+	Layer* GetLayer(class Entity* entity);
+	void Recycle();
+	void Instantiation();
+	void Physics();
+	void Update(D3DXMATRIX & V, D3DXMATRIX & P);
+	void Render();
+
 public:
-	vector<class Entity*> entity;
+	map<int, Layer*> layers;
 	class AnimationPool* pool;
-
-	vector<class Entity*> instantiateBuffer; // Entity here is queued and will be added to entity in next frame...
-	vector<class Entity*> trashBuffer; // NOTE THAT ENTITY IN HERE IS ALSO IN ENTITY
-
 };

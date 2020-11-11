@@ -3,7 +3,8 @@
 #include "Component.h"
 #include "Transform.h"
 
-Entity::Entity()
+Entity::Entity(int layer):
+	layer(layer)
 {
 	components.push_back(new Transform(this));
 }

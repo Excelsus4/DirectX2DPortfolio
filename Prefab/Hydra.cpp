@@ -2,8 +2,10 @@
 #include "Hydra.h"
 #include "ECS/AnimRenderer.h"
 #include "ECS/Recycler.h"
+#include "ECS/Layer.h"
 
-Hydra::Hydra(AnimationPool * pool)
+Hydra::Hydra(AnimationPool * pool):
+	Entity(Layer::GetLayerIDX("UserMissile"))
 {
 	AnimRenderer* animRenderer = new AnimRenderer(this);
 	animRenderer->SetAnim(pool->GetAnim("Missile_Hydra"));
