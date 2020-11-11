@@ -7,6 +7,8 @@ public:
 	virtual ~World();
 
 	Layer* GetLayer(class Entity* entity);
+	Layer* GetLayer(int layerIDX);
+
 	void Recycle();
 	void Instantiation();
 	void Physics();
@@ -14,6 +16,8 @@ public:
 	void Render();
 
 public:
-	map<int, Layer*> layers;
 	class AnimationPool* pool;
+
+private:
+	map<int, Layer*> layers;
 };

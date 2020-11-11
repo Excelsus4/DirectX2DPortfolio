@@ -3,6 +3,7 @@
 #include "ECS/AnimRenderer.h"
 #include "ECS/Recycler.h"
 #include "ECS/Layer.h"
+#include "ECS/Projectile.h"
 
 Hydra::Hydra(AnimationPool * pool):
 	Entity(Layer::GetLayerIDX("UserMissile"))
@@ -14,6 +15,9 @@ Hydra::Hydra(AnimationPool * pool):
 
 	Recycler* recycler = new Recycler(this);
 	components.push_back(recycler);
+
+	Projectile* projectile = new Projectile(this);
+	components.push_back(projectile);
 }
 
 Hydra::~Hydra()

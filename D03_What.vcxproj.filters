@@ -96,6 +96,9 @@
     <ClCompile Include="ECS\Layer.cpp">
       <Filter>ECS</Filter>
     </ClCompile>
+    <ClCompile Include="ECS\Projectile.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -199,6 +202,9 @@
       <Filter>ECS</Filter>
     </ClInclude>
     <ClInclude Include="ECS\Layer.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Projectile.h">
       <Filter>ECS</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,12 +12,16 @@ World::~World()
 
 Layer * World::GetLayer(Entity * entity)
 {
-	int key = entity->layer;
-	auto iter = layers.find(key);
+	return GetLayer(entity->layer);
+}
+
+Layer * World::GetLayer(int layerIDX)
+{
+	auto iter = layers.find(layerIDX);
 	if (iter == layers.end()) {
-		layers[key] = new Layer();
+		layers[layerIDX] = new Layer();
 	}
-	return layers[key];
+	return layers[layerIDX];
 }
 
 void World::Recycle()
