@@ -102,6 +102,12 @@
     <ClCompile Include="ECS\Collider.cpp">
       <Filter>ECS</Filter>
     </ClCompile>
+    <ClCompile Include="ECS\TimedRecycle.cpp">
+      <Filter>ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="Prefab\Explosion_Hydra.cpp">
+      <Filter>Prefab</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -212,6 +218,12 @@
     </ClInclude>
     <ClInclude Include="ECS\Collider.h">
       <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\TimedRecycle.h">
+      <Filter>ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefab\Explosion_Hydra.h">
+      <Filter>Prefab</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

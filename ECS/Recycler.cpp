@@ -3,6 +3,7 @@
 #include "World.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Prefab/Explosion_Hydra.h"
 
 Recycler::Recycler(class Entity* entity):
 	Component(entity)

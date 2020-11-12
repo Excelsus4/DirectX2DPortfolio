@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Component.h"
 #include "Transform.h"
+#include "Collider.h"
 
 Entity::Entity(int layer):
 	layer(layer)
@@ -17,6 +18,9 @@ Entity::~Entity()
 
 void Entity::PhysicsUpdate(World * world)
 {
+	for (auto c : components)
+		c->UpdateTransform(GetTransform());
+
 	for (auto c : components)
 		c->PhysicsUpdate(world);
 
@@ -46,4 +50,14 @@ void Entity::Recycle(World * world)
 Transform * Entity::GetTransform() const
 {
 	return (Transform*)components[0];
+}
+
+Collider * Entity::GetCollider() const
+{
+	Collider* ret = nullptr;
+	for (auto e : components) {
+ 		if (typeid(*e) == typeid(Collider))
+			ret = (Collider*)e;
+	}
+	return ret;
 }

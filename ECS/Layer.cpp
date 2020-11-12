@@ -5,7 +5,9 @@
 
 int Layer::GetLayerIDX(string name)
 {
-	if (name == "User")
+	if (name == "Effect")
+		return 200;
+	else if (name == "User")
 		return 100;
 	else if (name == "UserMissile")
 		return -20;

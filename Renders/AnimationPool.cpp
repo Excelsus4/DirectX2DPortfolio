@@ -27,6 +27,8 @@ void AnimationPool::Initialize()
 	InitializeAnim("Missile_Hydra", 16);
 	InitializeAnim("Missile_Hellfire", 4);
 
+	InitializeAnim("Explosion_Small01", 8);
+
 	InitializeAnim("Building_Small01", 4);
 }
 
@@ -52,6 +54,7 @@ Animation * AnimationPool::GetAnim(string key)
 
 void AnimationPool::Recycle(Animation * trash)
 {
+	trash->Stop();
 	pool[trash->key]->push_back(trash);
 }
 
@@ -135,6 +138,23 @@ Animation * AnimationPool::CreateAnim(string key)
 				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
 					384.0f, i * 64.0f, 448.0f, i * 64.0f + 64.0f
 				), 0.3f);
+			}
+			anim->AddClip(clip);
+		}
+	}
+	else if (key == "Explosion_Small01") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Explosion_16.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::End);
+			for (int i = 0; i < 8; ++i) {
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
+					i * 16, 0, i*16+16, 16
+				), 0.1f);
 			}
 			anim->AddClip(clip);
 		}

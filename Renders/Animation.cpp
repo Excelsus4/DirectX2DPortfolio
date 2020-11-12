@@ -34,6 +34,7 @@ void Animation::Stop()
 {
 	if (currentClip > -1)
 		clips[currentClip]->Stop();
+	currentClip = -1;
 }
 
 void Animation::Position(float x, float y)
