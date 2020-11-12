@@ -3,6 +3,7 @@
 #include "ECS/AnimRenderer.h"
 #include "ECS/PlayerController.h"
 #include "ECS/Layer.h"
+#include "ECS/Collider.h"
 
 Helicopter::Helicopter(AnimationPool * pool):
 	Entity(Layer::GetLayerIDX("User"))
@@ -24,6 +25,10 @@ Helicopter::Helicopter(AnimationPool * pool):
 
 	PlayerController* pCon = new PlayerController(this);
 	components.push_back(pCon);
+
+	Collider* collider = new Collider(this, D3DXVECTOR2(24, 60));
+	collider->DrawBound(true);
+	components.push_back(collider);
 }
 
 Helicopter::~Helicopter()

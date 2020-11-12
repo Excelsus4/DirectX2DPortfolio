@@ -133,7 +133,6 @@ bool Sprite::AABB(Sprite * a, Sprite * b)
 bool Sprite::Obb(Sprite * a, Sprite * b)
 {
 	ObbDesc obbA, obbB;
-	float xScale, yScale;
 
 	D3DXVECTOR2 lengthA = D3DXVECTOR2(a->world._11, a->world._22) * 0.5f;
 	CreateObb(&obbA, a->position, a->world, lengthA);

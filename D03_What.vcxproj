@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ECS\AnimRenderer.cpp" />
+    <ClCompile Include="ECS\Collider.cpp" />
     <ClCompile Include="ECS\Damager.cpp" />
     <ClCompile Include="ECS\Entity.cpp" />
     <ClCompile Include="ECS\Layer.cpp" />
@@ -187,6 +188,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ECS\AnimRenderer.h" />
+    <ClInclude Include="ECS\Collider.h" />
     <ClInclude Include="ECS\Component.h" />
     <ClInclude Include="ECS\Damager.h" />
     <ClInclude Include="ECS\Entity.h" />
