@@ -52,12 +52,11 @@ Transform * Entity::GetTransform() const
 	return (Transform*)components[0];
 }
 
-Collider * Entity::GetCollider() const
+Component* Entity::GetComponent(const char* T) const
 {
-	Collider* ret = nullptr;
 	for (auto e : components) {
- 		if (typeid(*e) == typeid(Collider))
-			ret = (Collider*)e;
+		if (typeid(*e).name() == T)
+			return e;
 	}
-	return ret;
+	return nullptr;
 }

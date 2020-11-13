@@ -18,6 +18,7 @@ Stage1::Stage1(SceneValues * values) :
 	world->GetLayer(temp)->entity.push_back(temp);
 
 	temp = new BuildingSmall01(values->Pool);
+	temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(40.0f)));
 	world->GetLayer(temp)->entity.push_back(temp);
 }
 

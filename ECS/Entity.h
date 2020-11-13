@@ -11,7 +11,7 @@ public:
 	virtual void Recycle(class World* world);
 
 	class Transform* GetTransform() const;
-	class Collider* GetCollider() const;
+	class Component* GetComponent(const char* T) const;
 
 public:
 	int layer;
