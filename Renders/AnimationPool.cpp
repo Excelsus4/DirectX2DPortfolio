@@ -8,7 +8,7 @@ AnimationPool::AnimationPool()
 
 AnimationPool::~AnimationPool()
 {
-	for each (pair<string,vector<Animation*>*> p in pool)
+	for each (pair<string, vector<Animation*>*> p in pool)
 	{
 		for each (Animation* anim in *p.second)
 		{
@@ -30,12 +30,13 @@ void AnimationPool::Initialize()
 	InitializeAnim("Explosion_Small01", 8);
 
 	InitializeAnim("Building_Small01", 4);
+	InitializeAnim("Building_Small01_Rubble", 4);
 }
 
 void AnimationPool::InitializeAnim(string key, size_t amount)
 {
 	pool[key] = new vector<Animation*>();
-	for(size_t i =0; i < amount; ++i)
+	for (size_t i = 0; i < amount; ++i)
 		Recycle(CreateAnim(key));
 }
 
@@ -84,8 +85,8 @@ Animation * AnimationPool::CreateAnim(string key)
 		{
 			Clip* clip = new Clip(PlayMode::Loop);
 			for (int i = 9; i >= 0; --i) {
-				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
-					i * 64.0f, 64.0f, i*64.0f+64.0f, 128.0f
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
+					i * 64.0f, 64.0f, i*64.0f + 64.0f, 128.0f
 				), 0.05f);
 			}
 			anim->AddClip(clip);
@@ -101,7 +102,7 @@ Animation * AnimationPool::CreateAnim(string key)
 		{
 			Clip* clip = new Clip(PlayMode::Loop);
 			for (int i = 0; i < 8; ++i) {
-				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
 					i * 64.0f, 128.0f, i * 64.0f + 64.0f, 192.0f
 				), 0.1f);
 			}
@@ -118,7 +119,7 @@ Animation * AnimationPool::CreateAnim(string key)
 		{
 			Clip* clip = new Clip(PlayMode::Loop);
 			for (int i = 0; i < 2; ++i) {
-				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
 					192.0f, i * 64.0f, 256.0f, i * 64.0f + 64.0f
 				), 0.1f);
 			}
@@ -135,7 +136,7 @@ Animation * AnimationPool::CreateAnim(string key)
 		{
 			Clip* clip = new Clip(PlayMode::End);
 			for (int i = 0; i < 2; ++i) {
-				clip->AddFrame(new Sprite(spriteFile, shaderFile, 
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
 					384.0f, i * 64.0f, 448.0f, i * 64.0f + 64.0f
 				), 0.3f);
 			}
@@ -153,7 +154,7 @@ Animation * AnimationPool::CreateAnim(string key)
 			Clip* clip = new Clip(PlayMode::End);
 			for (int i = 0; i < 8; ++i) {
 				clip->AddFrame(new Sprite(spriteFile, shaderFile,
-					i * 16, 0, i*16+16, 16
+					i * 16, 0, i * 16 + 16, 16
 				), 0.1f);
 			}
 			anim->AddClip(clip);
@@ -170,7 +171,7 @@ Animation * AnimationPool::CreateAnim(string key)
 			Clip* clip = new Clip(PlayMode::Loop);
 			for (int i = 0; i < 2; ++i) {
 				clip->AddFrame(new Sprite(spriteFile, shaderFile,
-					i*96,0, i*96+96, 96 
+					i * 96, 0, i * 96 + 96, 96
 				), 0.8f);
 			}
 			anim->AddClip(clip);
@@ -185,6 +186,13 @@ Animation * AnimationPool::CreateAnim(string key)
 			}
 			anim->AddClip(clip);
 		}
+	}
+	else if (key == "Building_Small01_Rubble") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Buildings_96.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
 
 		{
 			Clip* clip = new Clip(PlayMode::End);

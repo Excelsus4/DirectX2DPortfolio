@@ -10,9 +10,11 @@ int Layer::GetLayerIDX(string name)
 	else if (name == "User")
 		return 100;
 	else if (name == "UserMissile")
-		return -20;
+		return 40;
 	else if (name == "Building")
 		return 30;
+	else if (name == "Rubbles")
+		return -100;
 	return 0;
 }
 

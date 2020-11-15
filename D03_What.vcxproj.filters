@@ -108,6 +108,9 @@
     <ClCompile Include="Prefab\Explosion_Hydra.cpp">
       <Filter>Prefab</Filter>
     </ClCompile>
+    <ClCompile Include="Prefab\Buildings\Rubbles.cpp">
+      <Filter>Prefab\Buildings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -224,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="Prefab\Explosion_Hydra.h">
       <Filter>Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefab\Buildings\Rubbles.h">
+      <Filter>Prefab\Buildings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
