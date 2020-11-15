@@ -28,6 +28,7 @@ void AnimationPool::Initialize()
 	InitializeAnim("Missile_Hellfire", 4);
 
 	InitializeAnim("Explosion_Small01", 8);
+	InitializeAnim("Explosion_Big01", 4);
 
 	InitializeAnim("Building_Small01", 4);
 	InitializeAnim("Building_Small01_Rubble", 4);
@@ -156,6 +157,25 @@ Animation * AnimationPool::CreateAnim(string key)
 				clip->AddFrame(new Sprite(spriteFile, shaderFile,
 					i * 16, 0, i * 16 + 16, 16
 				), 0.1f);
+			}
+			anim->AddClip(clip);
+		}
+	}
+	else if (key == "Explosion_Big01") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Explosion_64.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::End);
+			for (int j = 0; j < 2; ++j) {
+				for (int i = 0; i < 4; ++i) {
+					clip->AddFrame(new Sprite(spriteFile, shaderFile,
+						i * 64, j*64, i * 64 + 64, j*64+64
+					), 0.1f);
+				}
 			}
 			anim->AddClip(clip);
 		}

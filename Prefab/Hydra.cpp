@@ -40,7 +40,7 @@ void Hydra::SpecialScript(World * world, int idx)
 {
 	switch (idx) {
 	case 0x588:
-		Entity* temp = new Explosion_Hydra(world->pool);
+		Entity* temp = new Explosion_Hydra(world->pool, "Explosion_Small01", 0.8f);
 		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
 		temp->GetTransform()->Position(this->GetTransform()->Position());
 		world->GetLayer(this)->trashBuffer.push_back(this);

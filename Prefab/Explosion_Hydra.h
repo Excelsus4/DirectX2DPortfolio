@@ -4,10 +4,8 @@
 
 class Explosion_Hydra : public Entity {
 public:
-	Explosion_Hydra(AnimationPool* pool);
+	Explosion_Hydra(AnimationPool* pool, string target, float ttl);
 	virtual ~Explosion_Hydra();
-
-	virtual void SpecialScript(class World* world, int idx) override;
 private:
 
 };

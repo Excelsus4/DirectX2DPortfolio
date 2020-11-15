@@ -7,6 +7,7 @@
 #include "Rubbles.h"
 #include "ECS/World.h"
 #include "ECS/Transform.h"
+#include "Prefab/Explosion_Hydra.h"
 
 BuildingSmall01::BuildingSmall01(AnimationPool * pool):
 	Entity(Layer::GetLayerIDX("Building"))
@@ -47,6 +48,12 @@ void BuildingSmall01::SpecialScript(World * world, int idx)
 			temp->GetTransform()->Scale(this->GetTransform()->Scale());
 			temp->GetTransform()->RotationRad(this->GetTransform()->RotationRad());
 			world->GetLayer(this)->trashBuffer.push_back(this);
+
+			temp = new Explosion_Hydra(world->pool, "Explosion_Big01", 0.8f);
+			world->GetLayer(temp)->instantiateBuffer.push_back(temp);
+			temp->GetTransform()->Position(this->GetTransform()->Position());
+			temp->GetTransform()->Scale(this->GetTransform()->Scale());
+			temp->GetTransform()->RotationRad(this->GetTransform()->RotationRad());
 		}
 		break;
 	}
