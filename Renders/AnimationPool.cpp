@@ -175,6 +175,24 @@ Animation * AnimationPool::CreateAnim(string key)
 			}
 			anim->AddClip(clip);
 		}
+
+		{
+			Clip* clip = new Clip(PlayMode::Loop);
+			for (int i = 0; i < 2; ++i) {
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
+					i * 96 + 192, 0, i * 96 + 288, 96
+				), 0.8f);
+			}
+			anim->AddClip(clip);
+		}
+
+		{
+			Clip* clip = new Clip(PlayMode::End);
+			clip->AddFrame(new Sprite(spriteFile, shaderFile,
+				384, 0, 480, 96
+			), 0.8f);
+			anim->AddClip(clip);
+		}
 	}
 
 	return anim;

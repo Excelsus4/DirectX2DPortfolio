@@ -6,6 +6,8 @@ class Hydra : public Entity {
 public:
 	Hydra(AnimationPool* pool);
 	virtual ~Hydra();
+
+	virtual void SpecialScript(class World* world, int idx) override;
 private:
 
 };

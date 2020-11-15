@@ -13,6 +13,7 @@ public:
 	class Transform* GetTransform() const;
 	class Component* GetComponent(const char* T) const;
 
+	virtual void SpecialScript(class World* world, int idx) {};
 public:
 	int layer;
 	vector<class Component*> components;

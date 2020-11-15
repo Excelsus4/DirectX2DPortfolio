@@ -6,7 +6,7 @@
 #include "World.h"
 
 PlayerController::PlayerController(Entity * entity):
-	Component(entity), speed(100.0f), roll(0.4f), pitch(0.3f)
+	Component(entity), speed(200.0f), roll(0.4f), pitch(0.3f)
 {
 }
 
@@ -21,26 +21,26 @@ void PlayerController::PhysicsUpdate(World * world)
 
 	if (Key->Press(VK_LEFT)) {
 		transform->Translate(D3DXVECTOR2(-1, 0)*speed*Timer->Elapsed());
-		rotation.y = roll;
+		//rotation.y = roll;
 	}
 	else if (Key->Press(VK_RIGHT)) {
 		transform->Translate(D3DXVECTOR2(1, 0)*speed*Timer->Elapsed());
-		rotation.y = -roll;
+		//rotation.y = -roll;
 	}
 	else {
-		rotation.y = 0.0f;
+		//rotation.y = 0.0f;
 	}
 
 	if (Key->Press(VK_UP)) {
 		transform->Translate(D3DXVECTOR2(0, 1)*speed*Timer->Elapsed());
-		rotation.x = pitch;
+		//rotation.x = pitch;
 	}
 	else if (Key->Press(VK_DOWN)) {
 		transform->Translate(D3DXVECTOR2(0, -1)*speed*Timer->Elapsed());
-		rotation.x = -pitch;
+		//rotation.x = -pitch;
 	}
 	else {
-		rotation.x = 0.0f;
+		//rotation.x = 0.0f;
 	}
 	transform->RotationRad(rotation);
 
@@ -50,10 +50,7 @@ void PlayerController::PhysicsUpdate(World * world)
 
 	// S Key creates Hydra
 	if (Key->Down(0x53)) {
-		Entity* temp = new Hydra(world->pool);
-		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
-		temp->GetTransform()->Acceleration(D3DXVECTOR2(0, 300.0f));
-		temp->GetTransform()->Position(transform->Position());
+		parent->SpecialScript(world, 0x53);
 	}
 
 	// D Key creates Bullet

@@ -8,12 +8,13 @@
 BuildingSmall01::BuildingSmall01(AnimationPool * pool):
 	Entity(Layer::GetLayerIDX("Building"))
 {
-	AnimRenderer* animRenderer = new AnimRenderer(this);
-	animRenderer->SetAnim(pool->GetAnim("Building_Small01"));
-	animRenderer->PlayAnim(0);
-	components.push_back(animRenderer);
+	mainAnim = new AnimRenderer(this);
+	mainAnim->SetAnim(pool->GetAnim("Building_Small01"));
+	mainAnim->PlayAnim(0);
+	components.push_back(mainAnim);
 
-	Damager* damager = new Damager(this, 60);
+	phase = 2;
+	damager = new Damager(this, 60);
 	components.push_back(damager);
 
 	Collider* collider = new Collider(this, D3DXVECTOR2(80, 80));
@@ -23,4 +24,23 @@ BuildingSmall01::BuildingSmall01(AnimationPool * pool):
 
 BuildingSmall01::~BuildingSmall01()
 {
+}
+
+void BuildingSmall01::SpecialScript(World * world, int idx)
+{
+	switch (idx) {
+	case 0x444:
+		if (phase == 2) {
+			//HALF DESTRUCTION
+			mainAnim->PlayAnim(1);
+			damager->SetHealth(90);
+			phase = 1;
+		}
+		else {
+			//TOTAL DESTRUCTION
+			mainAnim->PlayAnim(2);
+			phase = 0;
+		}
+		break;
+	}
 }

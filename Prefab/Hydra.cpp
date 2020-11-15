@@ -5,6 +5,11 @@
 #include "ECS/Layer.h"
 #include "ECS/Projectile.h"
 #include "ECS/Collider.h"
+#include "Explosion_Hydra.h"
+#include "ECS/TimedRecycle.h"
+#include "ECS/World.h"
+#include "ECS/Entity.h"
+#include "ECS/Transform.h"
 
 Hydra::Hydra(AnimationPool * pool):
 	Entity(Layer::GetLayerIDX("UserMissile"))
@@ -19,6 +24,7 @@ Hydra::Hydra(AnimationPool * pool):
 
 	Projectile* projectile = new Projectile(this);
 	projectile->SetEnemyLayer(Layer::GetLayerIDX("Building"));
+	projectile->SetDamage(25);
 	components.push_back(projectile);
 
 	Collider* collider = new Collider(this, D3DXVECTOR2(4, 10));
@@ -28,4 +34,16 @@ Hydra::Hydra(AnimationPool * pool):
 
 Hydra::~Hydra()
 {
+}
+
+void Hydra::SpecialScript(World * world, int idx)
+{
+	switch (idx) {
+	case 0x588:
+		Entity* temp = new Explosion_Hydra(world->pool);
+		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
+		temp->GetTransform()->Position(this->GetTransform()->Position());
+		world->GetLayer(this)->trashBuffer.push_back(this);
+		break;
+	}
 }

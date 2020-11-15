@@ -3,6 +3,9 @@
 #include "ECS/Layer.h"
 #include "ECS/AnimRenderer.h"
 #include "ECS/TimedRecycle.h"
+#include "ECS/World.h"
+#include "ECS/Entity.h"
+#include "ECS/Transform.h"
 
 Explosion_Hydra::Explosion_Hydra(AnimationPool * pool):
 	Entity(Layer::GetLayerIDX("Effect"))
@@ -17,5 +20,9 @@ Explosion_Hydra::Explosion_Hydra(AnimationPool * pool):
 }
 
 Explosion_Hydra::~Explosion_Hydra()
+{
+}
+
+void Explosion_Hydra::SpecialScript(World * world, int idx)
 {
 }
