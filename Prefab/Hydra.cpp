@@ -24,6 +24,7 @@ Hydra::Hydra(AnimationPool * pool):
 
 	Projectile* projectile = new Projectile(this);
 	projectile->SetEnemyLayer(Layer::GetLayerIDX("Building"));
+	projectile->SetEnemyLayer(Layer::GetLayerIDX("Hostile_Turret"));
 	projectile->SetDamage(25);
 	components.push_back(projectile);
 

@@ -111,6 +111,9 @@
     <ClCompile Include="Prefab\Buildings\Rubbles.cpp">
       <Filter>Prefab\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="Prefab\Enemy\AATurret.cpp">
+      <Filter>Prefab\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -231,6 +234,9 @@
     <ClInclude Include="Prefab\Buildings\Rubbles.h">
       <Filter>Prefab\Buildings</Filter>
     </ClInclude>
+    <ClInclude Include="Prefab\Enemy\AATurret.h">
+      <Filter>Prefab\Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Systems">
@@ -256,6 +262,9 @@
     </Filter>
     <Filter Include="Prefab\Buildings">
       <UniqueIdentifier>{a74ff353-17a0-493d-9857-af14cde0262e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Prefab\Enemy">
+      <UniqueIdentifier>{30a0f5a5-4965-4b27-b49d-84ccc769eee7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

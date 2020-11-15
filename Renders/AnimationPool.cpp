@@ -32,6 +32,8 @@ void AnimationPool::Initialize()
 
 	InitializeAnim("Building_Small01", 4);
 	InitializeAnim("Building_Small01_Rubble", 4);
+
+	InitializeAnim("AATurret", 4);
 }
 
 void AnimationPool::InitializeAnim(string key, size_t amount)
@@ -173,7 +175,7 @@ Animation * AnimationPool::CreateAnim(string key)
 			for (int j = 0; j < 2; ++j) {
 				for (int i = 0; i < 4; ++i) {
 					clip->AddFrame(new Sprite(spriteFile, shaderFile,
-						i * 64, j*64, i * 64 + 64, j*64+64
+						i * 64, j * 64, i * 64 + 64, j * 64 + 64
 					), 0.1f);
 				}
 			}
@@ -220,6 +222,25 @@ Animation * AnimationPool::CreateAnim(string key)
 				384, 0, 480, 96
 			), 0.8f);
 			anim->AddClip(clip);
+		}
+	}
+	else if (key == "AATurret") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"AATurret_64.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			for (int j = 0; j < 2; ++j) {
+				for (int i = 0; i < 8; ++i) {
+					Clip* clip = new Clip(PlayMode::End);
+					clip->AddFrame(new Sprite(spriteFile, shaderFile,
+						i * 64, j * 64, i * 64 + 64, j * 64 + 64
+					), 0.1f);
+					anim->AddClip(clip);
+				}
+			}
 		}
 	}
 

@@ -11,6 +11,8 @@ int Layer::GetLayerIDX(string name)
 		return 100;
 	else if (name == "UserMissile")
 		return 40;
+	else if (name == "Hostile_Turret")
+		return 36;
 	else if (name == "Building")
 		return 30;
 	else if (name == "Rubbles")

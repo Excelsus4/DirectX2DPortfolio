@@ -6,6 +6,10 @@
 
 #include "Prefab/Helicopter.h"
 #include "Prefab/Buildings/BuildingSmall01.h"
+#include "Prefab/Enemy/AATurret.h"
+
+Transform* DebugTarget;
+float DebugValue = 0.0f;
 
 Stage1::Stage1(SceneValues * values) :
 	Scene(values)
@@ -17,8 +21,14 @@ Stage1::Stage1(SceneValues * values) :
 	temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(180.0f)));
 	world->GetLayer(temp)->entity.push_back(temp);
 
+	/* Building Small Sample
 	temp = new BuildingSmall01(values->Pool);
 	temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(40.0f)));
+	world->GetLayer(temp)->entity.push_back(temp);*/
+
+	/* Turret Sample */
+	temp = new AATurret(values->Pool);
+	DebugTarget = temp->GetTransform();
 	world->GetLayer(temp)->entity.push_back(temp);
 }
 
@@ -35,6 +45,11 @@ void Stage1::Update()
 	// Instantiation Code...
 	world->Instantiation();
 
+	{
+		//DEBUG
+		DebugTarget->RotationRad(D3DXVECTOR3(0, 0, DebugValue));
+	}
+
 	// PHYSICS!!!
 	world->Physics();
 
@@ -47,6 +62,8 @@ void Stage1::Update()
 
 void Stage1::Render()
 {
+	ImGui::SliderFloat("Rotation", (float*)&DebugValue,-20, 20);
+
 	// RENDER
 	world->Render();
 }

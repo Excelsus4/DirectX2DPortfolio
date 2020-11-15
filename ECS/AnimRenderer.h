@@ -15,7 +15,11 @@ public:
 
 	virtual Animation* SetAnim(Animation* a);
 	virtual void PlayAnim(UINT clip);
+
+	void SpriteBasedRotation(bool val, int size) { isRotationSpriteBased = val; rotationSpriteSize = size; }
 private:
 	Animation* anim;
+	bool isRotationSpriteBased;
+	int rotationSpriteSize;
 
 };

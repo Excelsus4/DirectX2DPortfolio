@@ -160,6 +160,7 @@
     <ClCompile Include="ECS\World.cpp" />
     <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp" />
     <ClCompile Include="Prefab\Buildings\Rubbles.cpp" />
+    <ClCompile Include="Prefab\Enemy\AATurret.cpp" />
     <ClCompile Include="Prefab\Explosion_Hydra.cpp" />
     <ClCompile Include="Prefab\Helicopter.cpp" />
     <ClCompile Include="Prefab\Hellfire.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="ECS\World.h" />
     <ClInclude Include="Prefab\Buildings\BuildingSmall01.h" />
     <ClInclude Include="Prefab\Buildings\Rubbles.h" />
+    <ClInclude Include="Prefab\Enemy\AATurret.h" />
     <ClInclude Include="Prefab\Explosion_Hydra.h" />
     <ClInclude Include="Prefab\Helicopter.h" />
     <ClInclude Include="Prefab\Hellfire.h" />
