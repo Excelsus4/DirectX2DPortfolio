@@ -8,7 +8,6 @@
 #include "Explosion_Hydra.h"
 #include "ECS/TimedRecycle.h"
 #include "ECS/World.h"
-#include "ECS/Entity.h"
 #include "ECS/Transform.h"
 
 Hydra::Hydra(AnimationPool * pool):
