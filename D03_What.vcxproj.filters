@@ -114,6 +114,12 @@
     <ClCompile Include="Prefab\Enemy\AATurret.cpp">
       <Filter>Prefab\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="ECS\Components\TurretController.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Prefab\Enemy\EnemyProjectile.cpp">
+      <Filter>Prefab\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -237,6 +243,12 @@
     <ClInclude Include="Prefab\Enemy\AATurret.h">
       <Filter>Prefab\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="ECS\Components\TurretController.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefab\Enemy\EnemyProjectile.h">
+      <Filter>Prefab\Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Systems">
@@ -265,6 +277,9 @@
     </Filter>
     <Filter Include="Prefab\Enemy">
       <UniqueIdentifier>{30a0f5a5-4965-4b27-b49d-84ccc769eee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ECS\Components">
+      <UniqueIdentifier>{9da4ebec-0322-43c2-bfb0-323edbaaa698}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

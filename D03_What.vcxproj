@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="ECS\AnimRenderer.cpp" />
     <ClCompile Include="ECS\Collider.cpp" />
+    <ClCompile Include="ECS\Components\TurretController.cpp" />
     <ClCompile Include="ECS\Damager.cpp" />
     <ClCompile Include="ECS\Entity.cpp" />
     <ClCompile Include="ECS\Layer.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp" />
     <ClCompile Include="Prefab\Buildings\Rubbles.cpp" />
     <ClCompile Include="Prefab\Enemy\AATurret.cpp" />
+    <ClCompile Include="Prefab\Enemy\EnemyProjectile.cpp" />
     <ClCompile Include="Prefab\Explosion_Hydra.cpp" />
     <ClCompile Include="Prefab\Helicopter.cpp" />
     <ClCompile Include="Prefab\Hellfire.cpp" />
@@ -194,6 +196,7 @@
     <ClInclude Include="ECS\AnimRenderer.h" />
     <ClInclude Include="ECS\Collider.h" />
     <ClInclude Include="ECS\Component.h" />
+    <ClInclude Include="ECS\Components\TurretController.h" />
     <ClInclude Include="ECS\Damager.h" />
     <ClInclude Include="ECS\Entity.h" />
     <ClInclude Include="ECS\Layer.h" />
@@ -206,6 +209,7 @@
     <ClInclude Include="Prefab\Buildings\BuildingSmall01.h" />
     <ClInclude Include="Prefab\Buildings\Rubbles.h" />
     <ClInclude Include="Prefab\Enemy\AATurret.h" />
+    <ClInclude Include="Prefab\Enemy\EnemyProjectile.h" />
     <ClInclude Include="Prefab\Explosion_Hydra.h" />
     <ClInclude Include="Prefab\Helicopter.h" />
     <ClInclude Include="Prefab\Hellfire.h" />

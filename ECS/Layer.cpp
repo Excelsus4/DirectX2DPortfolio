@@ -9,6 +9,8 @@ int Layer::GetLayerIDX(string name)
 		return 200;
 	else if (name == "User")
 		return 100;
+	else if (name == "HostileMissile")
+		return 80;
 	else if (name == "UserMissile")
 		return 40;
 	else if (name == "Hostile_Turret")
