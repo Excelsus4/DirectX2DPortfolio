@@ -24,6 +24,7 @@ void AnimationPool::Initialize()
 	InitializeAnim("Apache_Rotor", 1);
 	InitializeAnim("Apache_Rotor_FX", 1);
 
+	InitializeAnim("Missile_Bullet", 64);
 	InitializeAnim("Missile_Hydra", 16);
 	InitializeAnim("Missile_Hellfire", 4);
 
@@ -140,11 +141,26 @@ Animation * AnimationPool::CreateAnim(string key)
 
 		{
 			Clip* clip = new Clip(PlayMode::End);
-			for (int i = 0; i < 2; ++i) {
+			for (int i = 1; i >= 0; --i) {
 				clip->AddFrame(new Sprite(spriteFile, shaderFile,
 					384.0f, i * 64.0f, 448.0f, i * 64.0f + 64.0f
 				), 0.3f);
 			}
+			anim->AddClip(clip);
+		}
+	}
+	else if (key == "Missile_Bullet") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Missile_64.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::End);
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
+					512.0f, 0.0f, 576.0f, 64.0f
+				), 0.3f);
 			anim->AddClip(clip);
 		}
 	}

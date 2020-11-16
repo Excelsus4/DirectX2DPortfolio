@@ -37,8 +37,9 @@ AATurret::~AATurret()
 void AATurret::SpecialScript(World * world, int idx)
 {
 	switch (idx) {
-	case 0x744:
+	case 0x0000744:
 	{
+		// TurretController's Attack Action
 		Entity* temp = new EnemyProjectile(world->pool, "Missile_Hydra", 5);
 		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
 		// set the velocity to a local form
@@ -48,8 +49,9 @@ void AATurret::SpecialScript(World * world, int idx)
 		temp->GetTransform()->Position(GetTransform()->Position());
 	}
 		break;
-	case 0x444:
+	case 0x0000444:
 	{
+		// On Death
 		Entity* temp = new Explosion_Hydra(world->pool, "Explosion_Big01", 0.8f);
 		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
 		temp->GetTransform()->Position(this->GetTransform()->Position());

@@ -46,14 +46,16 @@ void PlayerController::PhysicsUpdate(World * world)
 
 	// A Key creates Hellfire
 	if (Key->Down(0x41)) {
+		parent->SpecialScript(world, 0x0100041);
 	}
 
 	// S Key creates Hydra
 	if (Key->Down(0x53)) {
-		parent->SpecialScript(world, 0x53);
+		parent->SpecialScript(world, 0x0100053);
 	}
 
 	// D Key creates Bullet
 	if (Key->Down(0x44)) {
+		parent->SpecialScript(world, 0x0100044);
 	}
 }

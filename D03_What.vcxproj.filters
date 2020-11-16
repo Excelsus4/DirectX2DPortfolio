@@ -123,6 +123,9 @@
     <ClCompile Include="Brush\Brush.cpp">
       <Filter>Brush</Filter>
     </ClCompile>
+    <ClCompile Include="Prefab\Bullet.cpp">
+      <Filter>Prefab</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -254,6 +257,9 @@
     </ClInclude>
     <ClInclude Include="Brush\Brush.h">
       <Filter>Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefab\Bullet.h">
+      <Filter>Prefab</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,11 +6,13 @@
 #include "ECS/Collider.h"
 #include "ECS/World.h"
 #include "Hydra.h"
+#include "Hellfire.h"
+#include "Bullet.h"
 #include "ECS/Transform.h"
 #include "ECS/Damager.h"
 #include "Prefab/Explosion_Hydra.h"
 
-Helicopter::Helicopter(AnimationPool * pool):
+Helicopter::Helicopter(AnimationPool * pool) :
 	Entity(Layer::GetLayerIDX("User"))
 {
 	AnimRenderer* animRenderer = new AnimRenderer(this);
@@ -46,7 +48,7 @@ Helicopter::~Helicopter()
 void Helicopter::SpecialScript(World * world, int idx)
 {
 	switch (idx) {
-	case 0x444:
+	case 0x0000444:
 		// On HP lower than 0
 	{
 		world->GetLayer(this)->trashBuffer.push_back(this);
@@ -57,13 +59,31 @@ void Helicopter::SpecialScript(World * world, int idx)
 		temp->GetTransform()->Scale(this->GetTransform()->Scale());
 		temp->GetTransform()->RotationRad(this->GetTransform()->RotationRad());
 	}
-		break;
-	case 0x53:
+	break;
+	case 0x0100041:
+		// On Press Key A
+	{
+		Entity* temp = new Hellfire(world->pool);
+		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
+		temp->GetTransform()->Acceleration(D3DXVECTOR2(0, 400.0f));
+		temp->GetTransform()->Position(GetTransform()->Position());
+	}
+	break;
+	case 0x0100053:
 		// On Press Key S
 	{
 		Entity* temp = new Hydra(world->pool);
 		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
 		temp->GetTransform()->Acceleration(D3DXVECTOR2(0, 600.0f));
+		temp->GetTransform()->Position(GetTransform()->Position());
+	}
+	break;
+	case 0x0100044:
+		// On Press Key D
+	{
+		Entity* temp = new Bullet(world->pool);
+		world->GetLayer(temp)->instantiateBuffer.push_back(temp);
+		temp->GetTransform()->Velocity(D3DXVECTOR2(0, 1000.0f));
 		temp->GetTransform()->Position(GetTransform()->Position());
 	}
 		break;

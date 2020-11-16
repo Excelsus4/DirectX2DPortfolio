@@ -2,12 +2,11 @@
 #include "ECS/Entity.h"
 #include "Renders/AnimationPool.h"
 
-class Hellfire : public Entity {
+class Bullet :public Entity {
 public:
-	Hellfire(AnimationPool* pool);
-	virtual ~Hellfire();
+	Bullet(AnimationPool* pool);
+	virtual ~Bullet();
 
 	virtual void SpecialScript(class World* world, int idx) override;
 private:
-
 };
