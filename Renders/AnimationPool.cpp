@@ -28,7 +28,7 @@ void AnimationPool::Initialize()
 	InitializeAnim("Missile_Hydra", 16);
 	InitializeAnim("Missile_Hellfire", 4);
 
-	InitializeAnim("Explosion_Small01", 16);
+	InitializeAnim("Explosion_Small01", 64);
 	InitializeAnim("Explosion_Medium01", 8);
 	InitializeAnim("Explosion_Big01", 4);
 

@@ -13,4 +13,6 @@ private:
 	float roll;
 	float pitch;
 
+	float attackspeed;
+	float cooltime;
 };

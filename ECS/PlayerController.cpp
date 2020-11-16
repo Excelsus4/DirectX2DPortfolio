@@ -6,7 +6,8 @@
 #include "World.h"
 
 PlayerController::PlayerController(Entity * entity):
-	Component(entity), speed(200.0f), roll(0.4f), pitch(0.3f)
+	Component(entity), speed(200.0f), roll(0.4f), pitch(0.3f),
+	attackspeed(0.05f), cooltime(0.0f)
 {
 }
 
@@ -54,8 +55,12 @@ void PlayerController::PhysicsUpdate(World * world)
 		parent->SpecialScript(world, 0x0100053);
 	}
 
+	cooltime -= Timer->Elapsed();
 	// D Key creates Bullet
-	if (Key->Down(0x44)) {
-		parent->SpecialScript(world, 0x0100044);
+	if (Key->Press(0x44)) {
+		if (cooltime < 0) {
+			cooltime = attackspeed;
+			parent->SpecialScript(world, 0x0100044);
+		}
 	}
 }
