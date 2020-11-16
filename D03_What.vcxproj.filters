@@ -120,6 +120,9 @@
     <ClCompile Include="Prefab\Enemy\EnemyProjectile.cpp">
       <Filter>Prefab\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Brush\Brush.cpp">
+      <Filter>Brush</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -249,6 +252,9 @@
     <ClInclude Include="Prefab\Enemy\EnemyProjectile.h">
       <Filter>Prefab\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="Brush\Brush.h">
+      <Filter>Brush</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Systems">
@@ -280,6 +286,9 @@
     </Filter>
     <Filter Include="ECS\Components">
       <UniqueIdentifier>{9da4ebec-0322-43c2-bfb0-323edbaaa698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush">
+      <UniqueIdentifier>{81fbed33-9304-4a80-be77-4e4ae147bbb3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

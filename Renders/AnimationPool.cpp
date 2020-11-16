@@ -27,13 +27,15 @@ void AnimationPool::Initialize()
 	InitializeAnim("Missile_Hydra", 16);
 	InitializeAnim("Missile_Hellfire", 4);
 
-	InitializeAnim("Explosion_Small01", 8);
+	InitializeAnim("Explosion_Small01", 16);
+	InitializeAnim("Explosion_Medium01", 8);
 	InitializeAnim("Explosion_Big01", 4);
 
 	InitializeAnim("Building_Small01", 4);
 	InitializeAnim("Building_Small01_Rubble", 4);
 
 	InitializeAnim("AATurret", 4);
+	InitializeAnim("AATurret_Base", 4);
 }
 
 void AnimationPool::InitializeAnim(string key, size_t amount)
@@ -163,6 +165,23 @@ Animation * AnimationPool::CreateAnim(string key)
 			anim->AddClip(clip);
 		}
 	}
+	else if (key == "Explosion_Medium01") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Explosion_32.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::End);
+			for (int i = 0; i < 8; ++i) {
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
+					i * 32, 0, i * 32 + 32, 32
+				), 0.1f);
+			}
+			anim->AddClip(clip);
+		}
+	}
 	else if (key == "Explosion_Big01") {
 		anim = new Animation();
 		anim->key = key;
@@ -241,6 +260,21 @@ Animation * AnimationPool::CreateAnim(string key)
 					anim->AddClip(clip);
 				}
 			}
+		}
+	}
+	else if (key == "AATurret_Base") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"AATurret_64.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::End);
+			clip->AddFrame(new Sprite(spriteFile, shaderFile,
+				0, 128, 64, 192
+			), 0.1f);
+			anim->AddClip(clip);
 		}
 	}
 

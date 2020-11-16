@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Brush\Brush.cpp" />
     <ClCompile Include="ECS\AnimRenderer.cpp" />
     <ClCompile Include="ECS\Collider.cpp" />
     <ClCompile Include="ECS\Components\TurretController.cpp" />
@@ -193,6 +194,7 @@
     <None Include="Utilities\Xml.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Brush\Brush.h" />
     <ClInclude Include="ECS\AnimRenderer.h" />
     <ClInclude Include="ECS\Collider.h" />
     <ClInclude Include="ECS\Component.h" />

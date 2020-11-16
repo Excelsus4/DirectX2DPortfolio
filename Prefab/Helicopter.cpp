@@ -29,7 +29,7 @@ Helicopter::Helicopter(AnimationPool * pool):
 	PlayerController* pCon = new PlayerController(this);
 	components.push_back(pCon);
 
-	Collider* collider = new Collider(this, D3DXVECTOR2(24, 60));
+	Collider* collider = new Collider(this, D3DXVECTOR2(8, 50));
 	collider->DrawBound(true);
 	components.push_back(collider);
 }

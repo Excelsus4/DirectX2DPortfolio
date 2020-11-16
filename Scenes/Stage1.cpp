@@ -3,13 +3,12 @@
 #include "Viewer/Following.h"
 #include "ECS/World.h"
 #include "ECS/Transform.h"
+#include "Brush/Brush.h"
 
 #include "Prefab/Helicopter.h"
-#include "Prefab/Buildings/BuildingSmall01.h"
-#include "Prefab/Enemy/AATurret.h"
 
-Transform* DebugTarget;
-float DebugValue = 0.0f;
+//Transform* DebugTarget;
+//float DebugValue = 0.0f;
 
 Stage1::Stage1(SceneValues * values) :
 	Scene(values)
@@ -21,15 +20,10 @@ Stage1::Stage1(SceneValues * values) :
 	temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(180.0f)));
 	world->GetLayer(temp)->entity.push_back(temp);
 
-	/* Building Small Sample
-	temp = new BuildingSmall01(values->Pool);
-	temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(40.0f)));
-	world->GetLayer(temp)->entity.push_back(temp);*/
-
-	/* Turret Sample */
-	temp = new AATurret(values->Pool);
-	DebugTarget = temp->GetTransform();
-	world->GetLayer(temp)->entity.push_back(temp);
+	Brush brush(world, world->pool);
+	brush.CreateObject(0x00000001, D3DXVECTOR2(100, 100));
+	brush.CreateObject(0x00000001, D3DXVECTOR2(-100, 100));
+	brush.CreateObject(0x00000002, D3DXVECTOR2(0, 80));
 }
 
 Stage1::~Stage1()
@@ -47,7 +41,7 @@ void Stage1::Update()
 
 	{
 		//DEBUG
-		DebugTarget->RotationRad(D3DXVECTOR3(0, 0, DebugValue));
+		//DebugTarget->RotationRad(D3DXVECTOR3(0, 0, DebugValue));
 	}
 
 	// PHYSICS!!!
@@ -62,7 +56,7 @@ void Stage1::Update()
 
 void Stage1::Render()
 {
-	ImGui::SliderFloat("Rotation", (float*)&DebugValue,-20, 20);
+	//ImGui::SliderFloat("Rotation", (float*)&DebugValue,-20, 20);
 
 	// RENDER
 	world->Render();
