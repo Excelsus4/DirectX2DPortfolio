@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "BuildingSmall01.h"
-#include "ECS/AnimRenderer.h"
-#include "ECS/Damager.h"
+#include "ECS/Components/AnimRenderer.h"
+#include "ECS/Components/Damager.h"
 #include "ECS/Layer.h"
-#include "ECS/Collider.h"
+#include "ECS/Components/Collider.h"
 #include "Rubbles.h"
 #include "ECS/World.h"
-#include "ECS/Transform.h"
+#include "ECS/Components/Transform.h"
 #include "Prefab/Explosion_Hydra.h"
 
 BuildingSmall01::BuildingSmall01(AnimationPool * pool):

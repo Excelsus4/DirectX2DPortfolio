@@ -10,32 +10,6 @@ public:
 	virtual void Update(D3DXMATRIX& V, D3DXMATRIX& P);
 	void Render();
 
-	void DrawBound(bool val) { bDrawBound = val; }
-	void DrawCollision(bool val) { bDrawCollision = val; }
-
-public:
-	bool AABB(D3DXVECTOR2& position);
-	bool AABB(Sprite* b);
-	bool Obb(Sprite* b);
-
-	static bool AABB(Sprite* a, D3DXVECTOR2& position);
-	static bool AABB(Sprite* a, Sprite* b);
-	static bool Obb(Sprite* a, Sprite* b);
-
-private:
-	struct ObbDesc {
-		D3DXVECTOR2 Position;
-		D3DXVECTOR2 Direction[2];
-		float Length[2];
-	};
-
-	static void CreateObb(OUT ObbDesc* out, D3DXVECTOR2& pos, D3DXMATRIX& world, D3DXVECTOR2& length);
-	static float SeparateAxis(D3DXVECTOR2& separate, D3DXVECTOR2& e1, D3DXVECTOR2& e2);
-	static bool CheckObb(ObbDesc& obbA, ObbDesc& obbB);
-
-private:
-	void CreateBound();
-
 public:
 	void Position(float x, float y);
 	void Position(D3DXVECTOR2& vec);
@@ -59,15 +33,10 @@ private:
 	void Initialize(wstring spriteFile, wstring shaderFile, float startX, float startY, float endX, float endY);
 
 private:
-	bool bDrawBound;
-	bool bDrawCollision;
 	wstring textureFile;
 
 	Shader* shader;
 	ID3D11Buffer* vertexBuffer;
-
-	Shader* boundShader;
-	ID3D11Buffer* boundVertexBuffer;
 
 	D3DXVECTOR2 position;
 	D3DXVECTOR2 scale;
@@ -83,10 +52,6 @@ private:
 	struct Vertex {
 		D3DXVECTOR3 Position;
 		D3DXVECTOR2 Uv;
-	};
-
-	struct BoundVertex {
-		D3DXVECTOR3 Position;
 	};
 };
 

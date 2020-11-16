@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "PlayerController.h"
-#include "Entity.h"
+#include "ECS/Entity.h"
 #include "Transform.h"
 #include "Prefab/Hydra.h"
-#include "World.h"
+#include "ECS/World.h"
 
 PlayerController::PlayerController(Entity * entity):
 	Component(entity), speed(200.0f), roll(0.4f), pitch(0.3f),

@@ -148,17 +148,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Brush\Brush.cpp" />
-    <ClCompile Include="ECS\AnimRenderer.cpp" />
-    <ClCompile Include="ECS\Collider.cpp" />
+    <ClCompile Include="ECS\Components\AnimRenderer.cpp" />
+    <ClCompile Include="ECS\Components\Collider.cpp" />
+    <ClCompile Include="ECS\Components\Damager.cpp" />
+    <ClCompile Include="ECS\Components\PlayerController.cpp" />
+    <ClCompile Include="ECS\Components\Projectile.cpp" />
+    <ClCompile Include="ECS\Components\Recycler.cpp" />
+    <ClCompile Include="ECS\Components\TimedRecycle.cpp" />
+    <ClCompile Include="ECS\Components\Transform.cpp" />
     <ClCompile Include="ECS\Components\TurretController.cpp" />
-    <ClCompile Include="ECS\Damager.cpp" />
     <ClCompile Include="ECS\Entity.cpp" />
     <ClCompile Include="ECS\Layer.cpp" />
-    <ClCompile Include="ECS\PlayerController.cpp" />
-    <ClCompile Include="ECS\Projectile.cpp" />
-    <ClCompile Include="ECS\Recycler.cpp" />
-    <ClCompile Include="ECS\TimedRecycle.cpp" />
-    <ClCompile Include="ECS\Transform.cpp" />
     <ClCompile Include="ECS\World.cpp" />
     <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp" />
     <ClCompile Include="Prefab\Buildings\Rubbles.cpp" />
@@ -196,18 +196,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brush\Brush.h" />
-    <ClInclude Include="ECS\AnimRenderer.h" />
-    <ClInclude Include="ECS\Collider.h" />
     <ClInclude Include="ECS\Component.h" />
+    <ClInclude Include="ECS\Components\AnimRenderer.h" />
+    <ClInclude Include="ECS\Components\Collider.h" />
+    <ClInclude Include="ECS\Components\Damager.h" />
+    <ClInclude Include="ECS\Components\PlayerController.h" />
+    <ClInclude Include="ECS\Components\Projectile.h" />
+    <ClInclude Include="ECS\Components\Recycler.h" />
+    <ClInclude Include="ECS\Components\TimedRecycle.h" />
+    <ClInclude Include="ECS\Components\Transform.h" />
     <ClInclude Include="ECS\Components\TurretController.h" />
-    <ClInclude Include="ECS\Damager.h" />
     <ClInclude Include="ECS\Entity.h" />
     <ClInclude Include="ECS\Layer.h" />
-    <ClInclude Include="ECS\PlayerController.h" />
-    <ClInclude Include="ECS\Projectile.h" />
-    <ClInclude Include="ECS\Recycler.h" />
-    <ClInclude Include="ECS\TimedRecycle.h" />
-    <ClInclude Include="ECS\Transform.h" />
     <ClInclude Include="ECS\World.h" />
     <ClInclude Include="Prefab\Buildings\BuildingSmall01.h" />
     <ClInclude Include="Prefab\Buildings\Rubbles.h" />

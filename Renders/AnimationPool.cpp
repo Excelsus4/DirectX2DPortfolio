@@ -65,8 +65,10 @@ void AnimationPool::Recycle(Animation * trash)
 	pool[trash->key]->push_back(trash);
 }
 
+// All Animation should be imported in HERE
 Animation * AnimationPool::CreateAnim(string key)
 {
+#pragma warning( disable : 4244 )
 	Animation* anim = nullptr;
 	if (key == "Apache_Body") {
 		anim = new Animation();
@@ -295,4 +297,5 @@ Animation * AnimationPool::CreateAnim(string key)
 	}
 
 	return anim;
+#pragma warning( default : 4244 )
 }

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Damager.h"
-#include "Entity.h"
+#include "ECS/Entity.h"
 
 Damager::Damager(Entity * entity, int hp):
 	Component(entity), hp(hp)

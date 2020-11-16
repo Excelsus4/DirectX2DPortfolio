@@ -2,7 +2,7 @@
 #include "Stage1.h"
 #include "Viewer/Following.h"
 #include "ECS/World.h"
-#include "ECS/Transform.h"
+#include "ECS/Components/Transform.h"
 #include "Brush/Brush.h"
 
 #include "Prefab/Helicopter.h"

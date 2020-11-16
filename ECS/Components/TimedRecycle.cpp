@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "TimedRecycle.h"
-#include "World.h"
+#include "ECS/World.h"
 
 TimedRecycle::TimedRecycle(Entity * entity, float ttl):
 	Component(entity), ttl(ttl)

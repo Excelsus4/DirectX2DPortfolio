@@ -1,13 +1,13 @@
 #include "stdafx.h"
 #include "EnemyProjectile.h"
 #include "ECS/Layer.h"
-#include "ECS/AnimRenderer.h"
-#include "ECS/Recycler.h"
-#include "ECS/Projectile.h"
-#include "ECS/Collider.h"
+#include "ECS/Components/AnimRenderer.h"
+#include "ECS/Components/Recycler.h"
+#include "ECS/Components/Projectile.h"
+#include "ECS/Components/Collider.h"
 #include "Prefab/Explosion_Hydra.h"
 #include "ECS/World.h"
-#include "ECS/Transform.h"
+#include "ECS/Components/Transform.h"
 
 EnemyProjectile::EnemyProjectile(AnimationPool * pool, string target, int damage):
 	Entity(Layer::GetLayerIDX("HostileMissile"))

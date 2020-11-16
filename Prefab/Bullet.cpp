@@ -1,13 +1,13 @@
 #include "stdafx.h"
 #include "Bullet.h"
-#include "ECS/AnimRenderer.h"
-#include "ECS/Recycler.h"
+#include "ECS/Components/AnimRenderer.h"
+#include "ECS/Components/Recycler.h"
 #include "ECS/Layer.h"
-#include "ECS/Projectile.h"
-#include "ECS/Collider.h"
+#include "ECS/Components/Projectile.h"
+#include "ECS/Components/Collider.h"
 #include "ECS/World.h"
 #include "Explosion_Hydra.h"
-#include "ECS/Transform.h"
+#include "ECS/Components/Transform.h"
 
 Bullet::Bullet(AnimationPool * pool):
 Entity(Layer::GetLayerIDX("UserMissile"))

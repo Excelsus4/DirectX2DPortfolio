@@ -1,13 +1,13 @@
 #include "stdafx.h"
 #include "AATurret.h"
 #include "ECS/Layer.h"
-#include "ECS/AnimRenderer.h"
-#include "ECS/Collider.h"
-#include "ECS/Damager.h"
+#include "ECS/Components/AnimRenderer.h"
+#include "ECS/Components/Collider.h"
+#include "ECS/Components/Damager.h"
 #include "ECS/Components/TurretController.h"
 #include "EnemyProjectile.h"
 #include "ECS/World.h"
-#include "ECS/Transform.h"
+#include "ECS/Components/Transform.h"
 #include "Prefab/Explosion_Hydra.h"
 
 AATurret::AATurret(AnimationPool * pool) :

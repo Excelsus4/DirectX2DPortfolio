@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Rubbles.h"
 #include "ECS/Layer.h"
-#include "ECS/AnimRenderer.h"
+#include "ECS/Components/AnimRenderer.h"
 
 Rubbles::Rubbles(AnimationPool * pool, string target):
 	Entity(Layer::GetLayerIDX("Rubbles"))

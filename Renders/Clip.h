@@ -44,8 +44,6 @@ public:
 	void Update(D3DXMATRIX& V, D3DXMATRIX& P);
 	void Render();
 
-	void DrawBound(bool val);
-
 	Sprite* GetSprite();
 private:
 	D3DXVECTOR2 position;

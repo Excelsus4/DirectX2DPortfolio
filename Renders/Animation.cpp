@@ -119,12 +119,6 @@ void Animation::Render()
 	clips[currentClip]->Render();
 }
 
-void Animation::DrawBound(bool val)
-{
-	for (Clip* clip : clips)
-		clip->DrawBound(val);
-}
-
 Clip * Animation::GetClip()
 {
 	if (currentClip < 0)

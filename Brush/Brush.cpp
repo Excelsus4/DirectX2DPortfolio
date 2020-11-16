@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Brush.h"
-#include "ECS/Transform.h"
+#include "ECS/Components/Transform.h"
 
 #include "Prefab/Enemy/AATurret.h"
 #include "Prefab/Buildings/Rubbles.h"

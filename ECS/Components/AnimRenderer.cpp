@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "AnimRenderer.h"
 #include "Transform.h"
-#include "World.h"
+#include "ECS/World.h"
 #include "Renders/AnimationPool.h"
 
 AnimRenderer::AnimRenderer(class Entity* entity):

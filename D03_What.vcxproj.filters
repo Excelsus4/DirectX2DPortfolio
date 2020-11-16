@@ -63,20 +63,11 @@
     <ClCompile Include="ECS\World.cpp">
       <Filter>ECS</Filter>
     </ClCompile>
-    <ClCompile Include="ECS\Transform.cpp">
-      <Filter>ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="ECS\AnimRenderer.cpp">
-      <Filter>ECS</Filter>
-    </ClCompile>
     <ClCompile Include="Renders\AnimationPool.cpp">
       <Filter>Renders</Filter>
     </ClCompile>
     <ClCompile Include="Prefab\Helicopter.cpp">
       <Filter>Prefab</Filter>
-    </ClCompile>
-    <ClCompile Include="ECS\PlayerController.cpp">
-      <Filter>ECS</Filter>
     </ClCompile>
     <ClCompile Include="Prefab\Hydra.cpp">
       <Filter>Prefab</Filter>
@@ -84,25 +75,10 @@
     <ClCompile Include="Prefab\Hellfire.cpp">
       <Filter>Prefab</Filter>
     </ClCompile>
-    <ClCompile Include="ECS\Recycler.cpp">
-      <Filter>ECS</Filter>
-    </ClCompile>
     <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp">
       <Filter>Prefab\Buildings</Filter>
     </ClCompile>
-    <ClCompile Include="ECS\Damager.cpp">
-      <Filter>ECS</Filter>
-    </ClCompile>
     <ClCompile Include="ECS\Layer.cpp">
-      <Filter>ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="ECS\Projectile.cpp">
-      <Filter>ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="ECS\Collider.cpp">
-      <Filter>ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="ECS\TimedRecycle.cpp">
       <Filter>ECS</Filter>
     </ClCompile>
     <ClCompile Include="Prefab\Explosion_Hydra.cpp">
@@ -125,6 +101,30 @@
     </ClCompile>
     <ClCompile Include="Prefab\Bullet.cpp">
       <Filter>Prefab</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\AnimRenderer.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\Collider.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\Damager.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\PlayerController.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\Projectile.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\Recycler.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\TimedRecycle.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\Transform.cpp">
+      <Filter>ECS\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -198,20 +198,11 @@
     <ClInclude Include="ECS\World.h">
       <Filter>ECS</Filter>
     </ClInclude>
-    <ClInclude Include="ECS\Transform.h">
-      <Filter>ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="ECS\AnimRenderer.h">
-      <Filter>ECS</Filter>
-    </ClInclude>
     <ClInclude Include="Renders\AnimationPool.h">
       <Filter>Renders</Filter>
     </ClInclude>
     <ClInclude Include="Prefab\Helicopter.h">
       <Filter>Prefab</Filter>
-    </ClInclude>
-    <ClInclude Include="ECS\PlayerController.h">
-      <Filter>ECS</Filter>
     </ClInclude>
     <ClInclude Include="Prefab\Hydra.h">
       <Filter>Prefab</Filter>
@@ -219,25 +210,10 @@
     <ClInclude Include="Prefab\Hellfire.h">
       <Filter>Prefab</Filter>
     </ClInclude>
-    <ClInclude Include="ECS\Recycler.h">
-      <Filter>ECS</Filter>
-    </ClInclude>
     <ClInclude Include="Prefab\Buildings\BuildingSmall01.h">
       <Filter>Prefab\Buildings</Filter>
     </ClInclude>
-    <ClInclude Include="ECS\Damager.h">
-      <Filter>ECS</Filter>
-    </ClInclude>
     <ClInclude Include="ECS\Layer.h">
-      <Filter>ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="ECS\Projectile.h">
-      <Filter>ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="ECS\Collider.h">
-      <Filter>ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="ECS\TimedRecycle.h">
       <Filter>ECS</Filter>
     </ClInclude>
     <ClInclude Include="Prefab\Explosion_Hydra.h">
@@ -260,6 +236,30 @@
     </ClInclude>
     <ClInclude Include="Prefab\Bullet.h">
       <Filter>Prefab</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\AnimRenderer.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\Collider.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\Damager.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\PlayerController.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\Projectile.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\Recycler.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\TimedRecycle.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\Transform.h">
+      <Filter>ECS\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

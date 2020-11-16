@@ -30,8 +30,6 @@ public:
 	void Update(D3DXMATRIX& V, D3DXMATRIX& P);
 	void Render();
 
-	void DrawBound(bool val);
-
 	Clip* GetClip();
 	Sprite* GetSprite();
 

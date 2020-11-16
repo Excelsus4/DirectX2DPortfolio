@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "Explosion_Hydra.h"
 #include "ECS/Layer.h"
-#include "ECS/AnimRenderer.h"
-#include "ECS/TimedRecycle.h"
+#include "ECS/Components/AnimRenderer.h"
+#include "ECS/Components/TimedRecycle.h"
 #include "ECS/World.h"
 #include "ECS/Entity.h"
-#include "ECS/Transform.h"
+#include "ECS/Components/Transform.h"
 
 Explosion_Hydra::Explosion_Hydra(AnimationPool * pool, string target, float ttl):
 	Entity(Layer::GetLayerIDX("Effect"))

@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "Entity.h"
 #include "Component.h"
-#include "Transform.h"
-#include "Collider.h"
+#include "ECS/Components/Transform.h"
+#include "ECS/Components/Collider.h"
 
 Entity::Entity(int layer):
 	layer(layer)

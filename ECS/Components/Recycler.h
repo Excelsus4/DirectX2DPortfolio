@@ -1,5 +1,5 @@
 #pragma once
-#include "Component.h"
+#include "ECS/Component.h"
 
 class Recycler : public Component{
 public:
