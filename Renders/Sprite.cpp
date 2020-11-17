@@ -44,7 +44,7 @@ void Sprite::Update(D3DXMATRIX & V, D3DXMATRIX & P)
 
 void Sprite::Render()
 {
-	ImGui::LabelText("Position", "%f, %f", position.x, position.y);
+	//ImGui::LabelText("Position", "%f, %f", position.x, position.y);
 
 	UINT stride = sizeof(Vertex);
 	UINT offset = 0;

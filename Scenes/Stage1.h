@@ -10,5 +10,9 @@ public:
 	virtual void Render() override;
 
 private:
+	void CreateHeli();
 
+private:
+	int life;
+	int score;
 };

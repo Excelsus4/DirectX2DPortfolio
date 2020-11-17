@@ -8,6 +8,7 @@ public:
 
 	virtual void PhysicsUpdate(class World* world) override;
 
+	void ImGuiDisplayAmmo();
 private:
 	float speed;
 	float roll;
@@ -15,4 +16,6 @@ private:
 
 	float attackspeed;
 	float cooltime;
+
+	int ammo[3];
 };

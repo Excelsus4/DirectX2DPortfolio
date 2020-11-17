@@ -30,19 +30,39 @@ Helicopter::Helicopter(AnimationPool * pool) :
 	animRenderer->PlayAnim(0);
 	components.push_back(animRenderer);
 
-	PlayerController* pCon = new PlayerController(this);
+	pCon = new PlayerController(this);
 	components.push_back(pCon);
 
 	Collider* collider = new Collider(this, D3DXVECTOR2(8, 50));
 	collider->DrawBound(true);
 	components.push_back(collider);
 
-	Damager* damager = new Damager(this, 1);
+	damager = new Damager(this, 1);
 	components.push_back(damager);
 }
 
 Helicopter::~Helicopter()
 {
+}
+
+void Helicopter::PhysicsUpdate(World * world)
+{
+	if (invincibleTime > 0) {
+		invincibleTime -= Timer->Elapsed();
+		if (invincibleTime <= 0) {
+			//TODO: Remove invincibility;
+			damager->SetInvincibility(false);
+		}
+	}
+	__super::PhysicsUpdate(world);
+}
+
+void Helicopter::Render()
+{
+	if(invincibleTime-(int)invincibleTime < 0.75f)
+		__super::Render();
+	pCon->ImGuiDisplayAmmo();
+	damager->ImGuiDisplayHp();
 }
 
 void Helicopter::SpecialScript(World * world, int idx)
@@ -88,4 +108,11 @@ void Helicopter::SpecialScript(World * world, int idx)
 	}
 		break;
 	}
+}
+
+void Helicopter::SetInvincibility(float duration)
+{
+	//TODO: Set Invincibility
+	damager->SetInvincibility(true);
+	invincibleTime = duration;
 }

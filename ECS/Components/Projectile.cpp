@@ -32,9 +32,9 @@ void Projectile::PhysicsUpdate(World * world)
 		for (auto e : world->GetLayer(i)->entity) {
 			// collision check on these...
 			if (((Collider*)parent->GetComponent(typeid(Collider).name()))->Obb(((Collider*)e->GetComponent(typeid(Collider).name())))) {
-				parent->SpecialScript(world, 0x588);
 				// call Target's damager
-				((Damager*)e->GetComponent(typeid(Damager).name()))->Damage(world, this->damage);
+				if(((Damager*)e->GetComponent(typeid(Damager).name()))->Damage(world, this->damage))
+					parent->SpecialScript(world, 0x588);
 			}
 		}
 	}

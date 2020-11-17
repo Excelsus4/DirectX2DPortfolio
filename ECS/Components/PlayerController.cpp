@@ -9,6 +9,9 @@ PlayerController::PlayerController(Entity * entity):
 	Component(entity), speed(200.0f), roll(0.4f), pitch(0.3f),
 	attackspeed(0.05f), cooltime(0.0f)
 {
+	ammo[0] = 8;
+	ammo[1] = 60;
+	ammo[2] = 1000;
 }
 
 PlayerController::~PlayerController()
@@ -47,20 +50,32 @@ void PlayerController::PhysicsUpdate(World * world)
 
 	// A Key creates Hellfire
 	if (Key->Down(0x41)) {
-		parent->SpecialScript(world, 0x0100041);
+		if (ammo[0] > 0) {
+			--ammo[0];
+			parent->SpecialScript(world, 0x0100041);
+		}
 	}
 
 	// S Key creates Hydra
 	if (Key->Down(0x53)) {
-		parent->SpecialScript(world, 0x0100053);
+		if (ammo[1] > 0) {
+			--ammo[1];
+			parent->SpecialScript(world, 0x0100053);
+		}
 	}
 
 	cooltime -= Timer->Elapsed();
 	// D Key creates Bullet
 	if (Key->Press(0x44)) {
-		if (cooltime < 0) {
+		if (cooltime < 0 && ammo[2] > 0) {
+			--ammo[2];
 			cooltime = attackspeed;
 			parent->SpecialScript(world, 0x0100044);
 		}
 	}
+}
+
+void PlayerController::ImGuiDisplayAmmo()
+{
+	ImGui::LabelText("Ammo", "Hellfires: %d, Hydras: %d, Guns: %d", ammo[0], ammo[1], ammo[2]);
 }

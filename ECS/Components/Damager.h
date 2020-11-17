@@ -6,9 +6,12 @@ public:
 	Damager(class Entity* entity, int hp);
 	virtual ~Damager();
 
-	void Damage(World * world, int Damage);
+	bool Damage(World * world, int Damage);
+	void SetInvincibility(bool val);
 	void SetHealth(int hp);
 
+	void ImGuiDisplayHp();
 private:
+	bool invincible;
 	int hp;
 };

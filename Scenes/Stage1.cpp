@@ -11,14 +11,10 @@
 //float DebugValue = 0.0f;
 
 Stage1::Stage1(SceneValues * values) :
-	Scene(values)
+	Scene(values), life(4)
 {
 	world = new World();
 	world->pool = values->Pool;
-
-	Entity* temp = new Helicopter(values->Pool);
-	temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(180.0f)));
-	world->GetLayer(temp)->entity.push_back(temp);
 
 	Brush brush(world, world->pool);
 	brush.CreateObject(0x00000001, D3DXVECTOR2(100, 100));
@@ -35,6 +31,10 @@ void Stage1::Update()
 {
 	// Recycle Code...
 	world->Recycle();
+
+	if (world->GetLayer(Layer::GetLayerIDX("User"))->entity.size() <= 0) {
+		CreateHeli();
+	}
 
 	// Instantiation Code...
 	world->Instantiation();
@@ -60,4 +60,20 @@ void Stage1::Render()
 
 	// RENDER
 	world->Render();
+
+	// Player Global Data (Those That aren't bound to helicopter)
+	ImGui::LabelText("Lives", "Lives: %d", life);
+	ImGui::LabelText("Score", "Score: %d", 0);
+}
+
+void Stage1::CreateHeli()
+{
+	if (life > 0) {
+		--life;
+		Helicopter* temp = new Helicopter(values->Pool);
+		temp->GetTransform()->Position(D3DXVECTOR2(0, -200));
+		temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(180.0f)));
+		temp->SetInvincibility(5.0f);
+		world->GetLayer(temp)->entity.push_back(temp);
+	}
 }
