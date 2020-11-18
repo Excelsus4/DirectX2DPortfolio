@@ -126,6 +126,9 @@
     <ClCompile Include="ECS\Components\Transform.cpp">
       <Filter>ECS\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes\Loading.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -260,6 +263,9 @@
     </ClInclude>
     <ClInclude Include="ECS\Components\Transform.h">
       <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\Loading.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -62,8 +62,8 @@ void Stage1::Render()
 	world->Render();
 
 	// Player Global Data (Those That aren't bound to helicopter)
-	ImGui::LabelText("Lives", "Lives: %d", life);
-	ImGui::LabelText("Score", "Score: %d", 0);
+	ImGui::LabelText("Lives", "%d", life);
+	ImGui::LabelText("Score", "%d", 0);
 }
 
 void Stage1::CreateHeli()

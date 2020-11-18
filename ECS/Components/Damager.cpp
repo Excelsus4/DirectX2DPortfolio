@@ -17,7 +17,7 @@ bool Damager::Damage(World * world, int Damage)
 		return false;
 	hp -= Damage;
 	if (hp <= 0) {
-		//TODO: DEATH
+		// DEATH
 		parent->SpecialScript(world, 0x444);
 	}
 	return true;
@@ -35,5 +35,5 @@ void Damager::SetHealth(int hp)
 
 void Damager::ImGuiDisplayHp()
 {
-	ImGui::LabelText("Armor", "Armor: %d", hp);
+	ImGui::LabelText("Armor", "%d", hp);
 }

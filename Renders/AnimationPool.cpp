@@ -20,6 +20,10 @@ AnimationPool::~AnimationPool()
 
 void AnimationPool::Initialize()
 {
+	animas[0] = 0;
+	animas[1] = 0;
+	current = 0;
+
 	InitializeAnim("Apache_Body", 1);
 	InitializeAnim("Apache_Rotor", 1);
 	InitializeAnim("Apache_Rotor_FX", 1);
@@ -42,8 +46,11 @@ void AnimationPool::Initialize()
 void AnimationPool::InitializeAnim(string key, size_t amount)
 {
 	pool[key] = new vector<Animation*>();
-	for (size_t i = 0; i < amount; ++i)
-		Recycle(CreateAnim(key));
+	animas[1] += amount;
+	InitSchedule* s = new InitSchedule;
+	s->key = key;
+	s->amount = amount;
+	schedule.push_back(s);
 }
 
 Animation * AnimationPool::GetAnim(string key)
@@ -298,4 +305,23 @@ Animation * AnimationPool::CreateAnim(string key)
 
 	return anim;
 #pragma warning( default : 4244 )
+}
+
+bool AnimationPool::Process()
+{
+	Recycle(CreateAnim(schedule[0]->key));
+	++current;
+	++animas[0];
+	if (current >= schedule[0]->amount) {
+		delete schedule[0];
+		schedule.erase(schedule.begin());
+		current = 0;
+	}
+
+	return animas[0] >= animas[1];
+}
+
+void AnimationPool::Render()
+{
+	ImGui::LabelText("Loading", "%d/%d %.2f%%", animas[0], animas[1], ((float)(animas[0]) / (float)(animas[1])) * 100);
 }

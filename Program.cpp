@@ -3,6 +3,7 @@
 #include "./Scenes/Scene.h"
 #include "./Viewer/Freedom.h"
 
+#include "./Scenes/Loading.h"
 #include "./Scenes/Stage1.h"
 #include "./Renders/AnimationPool.h"
 
@@ -13,9 +14,10 @@ void InitScene() {
 	values = new SceneValues();
 	values->MainCamera = new Freedom();
 	values->Pool = new AnimationPool();
+	values->LoadingFlag = false;
 	D3DXMatrixIdentity(&values->Projection);
 
-	scenes.push_back(new Stage1(values));
+	scenes.push_back(new Loading(values));
 }
 
 void DestroyScene(){
@@ -43,6 +45,13 @@ void Update() {
 
 	for (auto scene : scenes)
 		scene->Update();
+
+	if (values->LoadingFlag) {
+		delete scenes[0];
+		scenes.erase(scenes.begin());
+		scenes.push_back(new Stage1(values));
+		values->LoadingFlag = false;
+	}
 }
 
 void Render() {

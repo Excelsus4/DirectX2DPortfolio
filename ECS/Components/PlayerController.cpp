@@ -77,5 +77,7 @@ void PlayerController::PhysicsUpdate(World * world)
 
 void PlayerController::ImGuiDisplayAmmo()
 {
-	ImGui::LabelText("Ammo", "Hellfires: %d, Hydras: %d, Guns: %d", ammo[0], ammo[1], ammo[2]);
+	ImGui::LabelText("Hellfires", "%d", ammo[0]);
+	ImGui::LabelText("Hydras", "%d", ammo[1]);
+	ImGui::LabelText("Guns", "%d", ammo[2]);
 }

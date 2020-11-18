@@ -1,6 +1,11 @@
 #pragma once
 #include "Animation.h"
 
+struct InitSchedule {
+	string key;
+	int amount;
+};
+
 class AnimationPool {
 public:
 	AnimationPool();
@@ -19,4 +24,13 @@ private:
 
 private:
 	map<string, vector<Animation*>*> pool;
+
+public:
+	bool Process();
+	void Render();
+
+private:
+	int animas[2];
+	int current;
+	vector<InitSchedule*> schedule;
 };

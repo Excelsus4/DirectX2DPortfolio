@@ -7,6 +7,7 @@ struct SceneValues {
 	AnimationPool* Pool;
 	class Camera* MainCamera;
 	D3DXMATRIX Projection;
+	bool LoadingFlag;
 };
 
 class Scene {
