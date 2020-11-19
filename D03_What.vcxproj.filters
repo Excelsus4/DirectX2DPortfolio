@@ -129,6 +129,15 @@
     <ClCompile Include="Scenes\Loading.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Prefab\Item\Score.cpp">
+      <Filter>Prefab\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\Item.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS\Components\ItemSpitter.cpp">
+      <Filter>ECS\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -267,6 +276,15 @@
     <ClInclude Include="Scenes\Loading.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="Prefab\Item\Score.h">
+      <Filter>Prefab\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\Item.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS\Components\ItemSpitter.h">
+      <Filter>ECS\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Systems">
@@ -301,6 +319,9 @@
     </Filter>
     <Filter Include="Brush">
       <UniqueIdentifier>{81fbed33-9304-4a80-be77-4e4ae147bbb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Prefab\Item">
+      <UniqueIdentifier>{866b52a3-ff5a-4b24-8641-ac9cb9830135}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

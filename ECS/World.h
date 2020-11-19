@@ -15,9 +15,15 @@ public:
 	void Update(D3DXMATRIX & V, D3DXMATRIX & P);
 	void Render();
 
+	class Entity* GetUserEntity();
 public:
 	class AnimationPool* pool;
+	RECT screenSize;
 
 private:
 	map<int, Layer*> layers;
+
+public:
+	int life;
+	int score;
 };

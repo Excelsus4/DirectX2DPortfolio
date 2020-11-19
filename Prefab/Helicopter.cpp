@@ -50,7 +50,7 @@ void Helicopter::PhysicsUpdate(World * world)
 	if (invincibleTime > 0) {
 		invincibleTime -= Timer->Elapsed();
 		if (invincibleTime <= 0) {
-			//TODO: Remove invincibility;
+			// Remove invincibility;
 			damager->SetInvincibility(false);
 		}
 	}
@@ -59,7 +59,7 @@ void Helicopter::PhysicsUpdate(World * world)
 
 void Helicopter::Render()
 {
-	if(invincibleTime-(int)invincibleTime < 0.75f)
+	if (invincibleTime - (int)invincibleTime < 0.75f)
 		__super::Render();
 	pCon->ImGuiDisplayAmmo();
 	damager->ImGuiDisplayHp();
@@ -106,7 +106,13 @@ void Helicopter::SpecialScript(World * world, int idx)
 		temp->GetTransform()->Velocity(D3DXVECTOR2(0, 1000.0f));
 		temp->GetTransform()->Position(GetTransform()->Position());
 	}
-		break;
+	break;
+	case 0x8400064:
+		// On Gather Coin
+	{
+		world->score += idx - 0x8400000;
+	}
+	break;
 	}
 }
 

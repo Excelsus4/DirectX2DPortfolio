@@ -25,10 +25,14 @@ void PlayerController::PhysicsUpdate(World * world)
 
 	if (Key->Press(VK_LEFT)) {
 		transform->Translate(D3DXVECTOR2(-1, 0)*speed*Timer->Elapsed());
+		if (transform->Position().x < world->screenSize.left)
+			transform->Position(D3DXVECTOR2(world->screenSize.left, transform->Position().y));
 		//rotation.y = roll;
 	}
 	else if (Key->Press(VK_RIGHT)) {
 		transform->Translate(D3DXVECTOR2(1, 0)*speed*Timer->Elapsed());
+		if (transform->Position().x > world->screenSize.right)
+			transform->Position(D3DXVECTOR2(world->screenSize.right, transform->Position().y));
 		//rotation.y = -roll;
 	}
 	else {
@@ -37,10 +41,14 @@ void PlayerController::PhysicsUpdate(World * world)
 
 	if (Key->Press(VK_UP)) {
 		transform->Translate(D3DXVECTOR2(0, 1)*speed*Timer->Elapsed());
+		if (transform->Position().y > world->screenSize.top)
+			transform->Position(D3DXVECTOR2(transform->Position().x, world->screenSize.top));
 		//rotation.x = pitch;
 	}
 	else if (Key->Press(VK_DOWN)) {
 		transform->Translate(D3DXVECTOR2(0, -1)*speed*Timer->Elapsed());
+		if (transform->Position().y < world->screenSize.bottom)
+			transform->Position(D3DXVECTOR2(transform->Position().x, world->screenSize.bottom));
 		//rotation.x = -pitch;
 	}
 	else {

@@ -151,6 +151,8 @@
     <ClCompile Include="ECS\Components\AnimRenderer.cpp" />
     <ClCompile Include="ECS\Components\Collider.cpp" />
     <ClCompile Include="ECS\Components\Damager.cpp" />
+    <ClCompile Include="ECS\Components\Item.cpp" />
+    <ClCompile Include="ECS\Components\ItemSpitter.cpp" />
     <ClCompile Include="ECS\Components\PlayerController.cpp" />
     <ClCompile Include="ECS\Components\Projectile.cpp" />
     <ClCompile Include="ECS\Components\Recycler.cpp" />
@@ -169,6 +171,7 @@
     <ClCompile Include="Prefab\Helicopter.cpp" />
     <ClCompile Include="Prefab\Hellfire.cpp" />
     <ClCompile Include="Prefab\Hydra.cpp" />
+    <ClCompile Include="Prefab\Item\Score.cpp" />
     <ClCompile Include="Renders\Animation.cpp" />
     <ClCompile Include="Renders\AnimationPool.cpp" />
     <ClCompile Include="Renders\Clip.cpp" />
@@ -201,6 +204,8 @@
     <ClInclude Include="ECS\Components\AnimRenderer.h" />
     <ClInclude Include="ECS\Components\Collider.h" />
     <ClInclude Include="ECS\Components\Damager.h" />
+    <ClInclude Include="ECS\Components\Item.h" />
+    <ClInclude Include="ECS\Components\ItemSpitter.h" />
     <ClInclude Include="ECS\Components\PlayerController.h" />
     <ClInclude Include="ECS\Components\Projectile.h" />
     <ClInclude Include="ECS\Components\Recycler.h" />
@@ -219,6 +224,7 @@
     <ClInclude Include="Prefab\Helicopter.h" />
     <ClInclude Include="Prefab\Hellfire.h" />
     <ClInclude Include="Prefab\Hydra.h" />
+    <ClInclude Include="Prefab\Item\Score.h" />
     <ClInclude Include="Renders\Animation.h" />
     <ClInclude Include="Renders\AnimationPool.h" />
     <ClInclude Include="Renders\Clip.h" />

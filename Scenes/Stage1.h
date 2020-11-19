@@ -13,6 +13,4 @@ private:
 	void CreateHeli();
 
 private:
-	int life;
-	int score;
 };

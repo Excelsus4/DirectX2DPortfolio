@@ -52,4 +52,15 @@ void World::Render()
 {
 	for (auto layer : layers)
 		layer.second->Render();
+
+
+}
+
+Entity * World::GetUserEntity()
+{
+	// if user exist, return user entity, else, return nullptr
+	auto userLayer = GetLayer(Layer::GetLayerIDX("User"));
+	if (userLayer->entity.size() > 0)
+		return userLayer->entity[0];
+	return nullptr;
 }

@@ -14,6 +14,7 @@ public:
 	D3DXVECTOR2 Velocity() const { return velocity; }
 	void Velocity(D3DXVECTOR2 vec) { velocity = vec; }
 	void Accelerate(D3DXVECTOR2 vec) { velocity += vec; }
+	void Boost(float rate) { velocity *= rate; }
 
 	D3DXVECTOR2 Acceleration() const { return acceleration; }
 	void Acceleration(D3DXVECTOR2 vec) { acceleration = vec; }
@@ -27,6 +28,11 @@ public:
 	void Scale(D3DXVECTOR2 vec) { scale = vec; }
 
 	virtual void PhysicsUpdate(class World* world) override;
+
+public:
+	bool wallBounce;
+private:
+	void Reflect(D3DXVECTOR2 normVec);
 
 private:
 	D3DXVECTOR2 position;

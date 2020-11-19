@@ -41,6 +41,8 @@ void AnimationPool::Initialize()
 
 	InitializeAnim("AATurret", 4);
 	InitializeAnim("AATurret_Base", 4);
+
+	InitializeAnim("Coin", 64);
 }
 
 void AnimationPool::InitializeAnim(string key, size_t amount)
@@ -167,9 +169,9 @@ Animation * AnimationPool::CreateAnim(string key)
 
 		{
 			Clip* clip = new Clip(PlayMode::End);
-				clip->AddFrame(new Sprite(spriteFile, shaderFile,
-					512.0f, 0.0f, 576.0f, 64.0f
-				), 0.3f);
+			clip->AddFrame(new Sprite(spriteFile, shaderFile,
+				512.0f, 0.0f, 576.0f, 64.0f
+			), 0.3f);
 			anim->AddClip(clip);
 		}
 	}
@@ -302,6 +304,24 @@ Animation * AnimationPool::CreateAnim(string key)
 			anim->AddClip(clip);
 		}
 	}
+	else if (key == "Coin") {
+		anim = new Animation();
+		anim->key = key;
+
+		wstring spriteFile = Textures + L"Coin_16.png";
+		wstring shaderFile = Shaders + L"009_Sprite.fx";
+
+		{
+			Clip* clip = new Clip(PlayMode::Loop);
+			for (int i = 0; i < 4; ++i) {
+				clip->AddFrame(new Sprite(spriteFile, shaderFile,
+					i * 16, 0, i * 16 + 16, 16
+				), 0.1f);
+			}
+			anim->AddClip(clip);
+		}
+	}
+
 
 	return anim;
 #pragma warning( default : 4244 )

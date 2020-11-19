@@ -6,15 +6,24 @@
 #include "Brush/Brush.h"
 
 #include "Prefab/Helicopter.h"
+#include "Prefab/Item/Score.h"
 
 //Transform* DebugTarget;
 //float DebugValue = 0.0f;
 
 Stage1::Stage1(SceneValues * values) :
-	Scene(values), life(4)
+	Scene(values)
 {
 	world = new World();
 	world->pool = values->Pool;
+	world->life = 4;
+
+	RECT scSize;
+	scSize.left = -200;
+	scSize.right = 200;
+	scSize.top = 300;
+	scSize.bottom = -300;
+	world->screenSize = scSize;
 
 	Brush brush(world, world->pool);
 	brush.CreateObject(0x00000001, D3DXVECTOR2(100, 100));
@@ -62,14 +71,14 @@ void Stage1::Render()
 	world->Render();
 
 	// Player Global Data (Those That aren't bound to helicopter)
-	ImGui::LabelText("Lives", "%d", life);
-	ImGui::LabelText("Score", "%d", 0);
+	ImGui::LabelText("Lives", "%d", world->life);
+	ImGui::LabelText("Score", "%d", world->score);
 }
 
 void Stage1::CreateHeli()
 {
-	if (life > 0) {
-		--life;
+	if (world->life > 0) {
+		--world->life;
 		Helicopter* temp = new Helicopter(values->Pool);
 		temp->GetTransform()->Position(D3DXVECTOR2(0, -200));
 		temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(180.0f)));

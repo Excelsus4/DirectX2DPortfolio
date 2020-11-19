@@ -9,6 +9,7 @@
 #include "ECS/World.h"
 #include "ECS/Components/Transform.h"
 #include "Prefab/Explosion_Hydra.h"
+#include "ECS/Components/ItemSpitter.h"
 
 AATurret::AATurret(AnimationPool * pool) :
 	Entity(Layer::GetLayerIDX("Hostile_Turret"))
@@ -28,6 +29,15 @@ AATurret::AATurret(AnimationPool * pool) :
 
 	TurretController* controller = new TurretController(this);
 	components.push_back(controller);
+
+	ItemSpitter* itemSpitter = new ItemSpitter(this);
+	ItemPool* ip = new ItemPool;
+	ip->ItemCode = 0x01;
+	ip->prob = 1.0f;
+	ip->max = 4;
+	ip->min = 1;
+	itemSpitter->AddItemPool(ip);
+	components.push_back(itemSpitter);
 }
 
 AATurret::~AATurret()
