@@ -36,7 +36,7 @@ void AnimRenderer::UpdateTransform(Transform * transform)
 	else {
 		anim->Rotation(0, 0, 0);
 		float rot = -transform->RotationRad().z; // 0~2pi
-		rot /= Math::PI*2;						//TODO: Remove pi with a magic number... it becomes 0~1
+		rot /= Math::PI*2;						// Remove pi with a magic number... it becomes 0~1
 		rot *= rotationSpriteSize;				// 0~16
 		anim->Play((UINT)(((int)rot + rotationSpriteSize * 128) % rotationSpriteSize));
 	}

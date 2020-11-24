@@ -26,4 +26,7 @@ private:
 public:
 	int life;
 	int score;
+
+	vector<int> ScrollLayers;
+	float ScrollSpeed;
 };

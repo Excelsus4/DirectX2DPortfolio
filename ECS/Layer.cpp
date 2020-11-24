@@ -28,6 +28,7 @@ void Layer::Recycle(World * world)
 {
 	for (auto iter = trashBuffer.begin(); iter != trashBuffer.end();) {
 		// find iter in entities and recycle...
+		bool isFound = false;
 		for (auto entityIter = entity.begin(); entityIter != entity.end();) {
 			if (*iter == *entityIter) {
 				(*iter)->Recycle(world);
@@ -35,11 +36,19 @@ void Layer::Recycle(World * world)
 
 				entityIter = entity.erase(entityIter);
 				iter = trashBuffer.erase(iter);
+				isFound = true;
 				break;
 			}
 			else {
 				entityIter++;
 			}
+		}
+
+		// sometimes the entity is added to the trash buffer twice
+		// so the entity sometimes cannot be found...
+		// Hence just simply erase the iterator in trash buffer
+		if (!isFound) {
+			iter = trashBuffer.erase(iter);
 		}
 	}
 }

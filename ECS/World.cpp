@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "World.h"
 #include "Entity.h"
+#include "ECS/Components/Transform.h"
 
 World::World()
 {
@@ -38,6 +39,12 @@ void World::Instantiation()
 
 void World::Physics()
 {
+	for (auto scl : ScrollLayers) {
+		for (auto e : layers[scl]->entity) {
+			e->GetTransform()->Translate(D3DXVECTOR2(0, ScrollSpeed * Timer->Elapsed()));
+		}
+	}
+
 	for (auto layer : layers)
 		layer.second->Physics(this);
 }
@@ -52,8 +59,6 @@ void World::Render()
 {
 	for (auto layer : layers)
 		layer.second->Render();
-
-
 }
 
 Entity * World::GetUserEntity()

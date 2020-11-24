@@ -17,6 +17,10 @@ Stage1::Stage1(SceneValues * values) :
 	world = new World();
 	world->pool = values->Pool;
 	world->life = 4;
+	world->ScrollSpeed = -20;
+	world->ScrollLayers.push_back(Layer::GetLayerIDX("Building"));
+	world->ScrollLayers.push_back(Layer::GetLayerIDX("Hostile_Turret"));
+	world->ScrollLayers.push_back(Layer::GetLayerIDX("Rubbles"));
 
 	RECT scSize;
 	scSize.left = -200;
