@@ -22,6 +22,7 @@ public:
 
 	D3DXVECTOR3 RotationRad() const { return rotation; }
 	void RotationRad(D3DXVECTOR3 vec) { rotation = vec; }
+	void RotationRadLerp(float zRot, float maxTheta);
 	void RotateRad(D3DXVECTOR3 vec) { rotation += vec; }
 
 	D3DXVECTOR2 Scale() const { return scale; }

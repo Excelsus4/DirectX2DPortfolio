@@ -3,6 +3,7 @@
 
 class TurretController : public Component {
 public:
+	TurretController(class Entity* entity, float rotSpeed, float fireDelay, float cooltime);
 	TurretController(class Entity* entity);
 	virtual ~TurretController();
 

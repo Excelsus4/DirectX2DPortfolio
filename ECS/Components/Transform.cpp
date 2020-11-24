@@ -18,6 +18,26 @@ Transform::~Transform()
 {
 }
 
+void Transform::RotationRadLerp(float zRot, float maxTheta)
+{
+	if (abs(zRot) == 0)
+		return;
+
+	float delta = rotation.z;
+	delta = delta - zRot;
+	delta += Math::PI * 3;
+	float twoPi = Math::PI * 2;
+	while (delta > twoPi)
+		delta -= twoPi;
+	delta -= Math::PI;
+	if (abs(delta) < maxTheta)
+		RotationRad(D3DXVECTOR3(0, 0, zRot));
+	else if (delta < 0)
+		RotateRad(D3DXVECTOR3(0, 0, maxTheta));
+	else
+		RotateRad(D3DXVECTOR3(0, 0, -maxTheta));
+}
+
 void Transform::PhysicsUpdate(World * world)
 {
 	velocity += acceleration * Timer->Elapsed();
