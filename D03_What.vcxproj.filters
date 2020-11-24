@@ -138,6 +138,9 @@
     <ClCompile Include="ECS\Components\ItemSpitter.cpp">
       <Filter>ECS\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes\MainMenu.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -284,6 +287,9 @@
     </ClInclude>
     <ClInclude Include="ECS\Components\ItemSpitter.h">
       <Filter>ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\MainMenu.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

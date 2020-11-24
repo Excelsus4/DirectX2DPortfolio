@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Loading.h"
+#include "Stage1.h"
 
 Loading::Loading(SceneValues * values):
 	Scene(values)
@@ -12,7 +13,8 @@ Loading::~Loading()
 
 void Loading::Update()
 {
-	values->LoadingFlag = values->Pool->Process();
+	if (values->Pool->Process())
+		values->Callback(new Stage1(values));
 }
 
 void Loading::Render()

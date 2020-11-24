@@ -3,21 +3,35 @@
 #include "./Scenes/Scene.h"
 #include "./Viewer/Freedom.h"
 
-#include "./Scenes/Loading.h"
-#include "./Scenes/Stage1.h"
+#include "./Scenes/MainMenu.h"
 #include "./Renders/AnimationPool.h"
 
 SceneValues* values;
 vector<Scene*> scenes;
+vector<Scene*> buffer;
+
+void AddScene(Scene* newScene) {
+	buffer.push_back(newScene);
+}
+
+void DeBuffer() {
+	if (buffer.size() > 0) {
+		delete scenes[0];
+		scenes.erase(scenes.begin());
+		scenes.push_back(*buffer.begin());
+		buffer.erase(buffer.begin());
+	}
+}
 
 void InitScene() {
 	values = new SceneValues();
 	values->MainCamera = new Freedom();
 	values->Pool = new AnimationPool();
-	values->LoadingFlag = false;
+	values->Callback = bind(&AddScene, placeholders::_1);
+
 	D3DXMatrixIdentity(&values->Projection);
 
-	scenes.push_back(new Loading(values));
+	scenes.push_back(new MainMenu(values));
 }
 
 void DestroyScene(){
@@ -43,15 +57,10 @@ void Update() {
 		-10, 10
 	);
 
+	DeBuffer();
+
 	for (auto scene : scenes)
 		scene->Update();
-
-	if (values->LoadingFlag) {
-		delete scenes[0];
-		scenes.erase(scenes.begin());
-		scenes.push_back(new Stage1(values));
-		values->LoadingFlag = false;
-	}
 }
 
 void Render() {
