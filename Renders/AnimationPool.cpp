@@ -329,6 +329,9 @@ Animation * AnimationPool::CreateAnim(string key)
 
 bool AnimationPool::Process()
 {
+	if (animas[0] >= animas[1])
+		return true;
+
 	Recycle(CreateAnim(schedule[0]->key));
 	++current;
 	++animas[0];
@@ -338,7 +341,7 @@ bool AnimationPool::Process()
 		current = 0;
 	}
 
-	return animas[0] >= animas[1];
+	return false;
 }
 
 void AnimationPool::Render()

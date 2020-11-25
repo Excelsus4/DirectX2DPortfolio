@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "MainMenu.h"
 #include "Loading.h"
+#include "MapEditor.h"
 
 MainMenu::MainMenu(SceneValues * values) :
 	Scene(values)
@@ -23,6 +24,6 @@ void MainMenu::Render()
 	}
 
 	if (ImGui::Button("Map Editor")) {
-
+		values->Callback(new MapEditor(values));
 	}
 }

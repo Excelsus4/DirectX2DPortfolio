@@ -8,6 +8,8 @@
 #include "Prefab/Helicopter.h"
 #include "Prefab/Item/Score.h"
 
+#include "MainMenu.h"
+
 //Transform* DebugTarget;
 //float DebugValue = 0.0f;
 
@@ -88,5 +90,8 @@ void Stage1::CreateHeli()
 		temp->GetTransform()->RotateRad(D3DXVECTOR3(0, 0, Math::ToRadian(180.0f)));
 		temp->SetInvincibility(5.0f);
 		world->GetLayer(temp)->entity.push_back(temp);
+	}
+	else {
+		values->Callback(new MainMenu(values));
 	}
 }

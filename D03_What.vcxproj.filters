@@ -141,6 +141,9 @@
     <ClCompile Include="Scenes\MainMenu.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes\MapEditor.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -289,6 +292,9 @@
       <Filter>ECS\Components</Filter>
     </ClInclude>
     <ClInclude Include="Scenes\MainMenu.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\MapEditor.h">
       <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
