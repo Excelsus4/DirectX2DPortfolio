@@ -9,6 +9,8 @@ World::World()
 
 World::~World()
 {
+	//TODO: delete layers....
+	ClearWorld();
 }
 
 Layer * World::GetLayer(Entity * entity)
@@ -23,6 +25,14 @@ Layer * World::GetLayer(int layerIDX)
 		layers[layerIDX] = new Layer();
 	}
 	return layers[layerIDX];
+}
+
+void World::ClearWorld()
+{
+	for (auto layer : layers) {
+		layer.second->ClearLayer(this);
+		SAFE_DELETE(layer.second);
+	}
 }
 
 void World::Recycle()

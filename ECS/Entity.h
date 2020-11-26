@@ -6,6 +6,7 @@ public:
 	virtual ~Entity();
 
 	virtual void PhysicsUpdate(class World* world);
+	virtual void TransformUpdate();
 	virtual void Update(D3DXMATRIX& V, D3DXMATRIX& P);
 	virtual void Render();
 	virtual void Recycle(class World* world);

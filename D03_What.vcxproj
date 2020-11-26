@@ -162,6 +162,7 @@
     <ClCompile Include="ECS\Entity.cpp" />
     <ClCompile Include="ECS\Layer.cpp" />
     <ClCompile Include="ECS\World.cpp" />
+    <ClCompile Include="Map\MapData.cpp" />
     <ClCompile Include="Prefab\Buildings\BuildingSmall01.cpp" />
     <ClCompile Include="Prefab\Buildings\Rubbles.cpp" />
     <ClCompile Include="Prefab\Bullet.cpp" />
@@ -217,6 +218,7 @@
     <ClInclude Include="ECS\Entity.h" />
     <ClInclude Include="ECS\Layer.h" />
     <ClInclude Include="ECS\World.h" />
+    <ClInclude Include="Map\MapData.h" />
     <ClInclude Include="Prefab\Buildings\BuildingSmall01.h" />
     <ClInclude Include="Prefab\Buildings\Rubbles.h" />
     <ClInclude Include="Prefab\Bullet.h" />

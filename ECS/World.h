@@ -9,6 +9,7 @@ public:
 	Layer* GetLayer(class Entity* entity);
 	Layer* GetLayer(int layerIDX);
 
+	void ClearWorld();
 	void Recycle();
 	void Instantiation();
 	void Physics();

@@ -4,6 +4,7 @@ class Layer {
 public:
 	static int GetLayerIDX(string name);
 public:
+	void ClearLayer(class World* world);
 	void Recycle(class World* world);
 	void Instantiation();
 	void Physics(class World* world);

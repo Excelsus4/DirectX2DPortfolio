@@ -24,6 +24,13 @@ int Layer::GetLayerIDX(string name)
 	return 0;
 }
 
+void Layer::ClearLayer(World * world)
+{
+	for (auto iter = entity.begin(); iter != entity.end(); ++iter)
+		SAFE_DELETE(*iter);
+	entity.clear();
+}
+
 void Layer::Recycle(World * world)
 {
 	for (auto iter = trashBuffer.begin(); iter != trashBuffer.end();) {
@@ -40,7 +47,7 @@ void Layer::Recycle(World * world)
 				break;
 			}
 			else {
-				entityIter++;
+				++entityIter;
 			}
 		}
 

@@ -144,6 +144,9 @@
     <ClCompile Include="Scenes\MapEditor.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Map\MapData.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Systems\Keyboard.h">
@@ -297,6 +300,9 @@
     <ClInclude Include="Scenes\MapEditor.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="Map\MapData.h">
+      <Filter>Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Systems">
@@ -334,6 +340,9 @@
     </Filter>
     <Filter Include="Prefab\Item">
       <UniqueIdentifier>{866b52a3-ff5a-4b24-8641-ac9cb9830135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{dab6d9d0-e6c1-4242-bb61-67e26b61525e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

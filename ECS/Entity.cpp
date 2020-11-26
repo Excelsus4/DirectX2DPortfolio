@@ -18,12 +18,16 @@ Entity::~Entity()
 
 void Entity::PhysicsUpdate(World * world)
 {
-	for (auto c : components)
-		c->UpdateTransform(GetTransform());
+	TransformUpdate();
 
 	for (auto c : components)
 		c->PhysicsUpdate(world);
 
+	TransformUpdate();
+}
+
+void Entity::TransformUpdate()
+{
 	for (auto c : components)
 		c->UpdateTransform(GetTransform());
 }
