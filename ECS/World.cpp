@@ -9,7 +9,7 @@ World::World()
 
 World::~World()
 {
-	//TODO: delete layers....
+	// delete layers....
 	ClearWorld();
 }
 

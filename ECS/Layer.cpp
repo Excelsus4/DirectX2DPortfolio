@@ -26,8 +26,10 @@ int Layer::GetLayerIDX(string name)
 
 void Layer::ClearLayer(World * world)
 {
-	for (auto iter = entity.begin(); iter != entity.end(); ++iter)
+	for (auto iter = entity.begin(); iter != entity.end(); ++iter) {
+		(*iter)->Recycle(world);
 		SAFE_DELETE(*iter);
+	}
 	entity.clear();
 }
 

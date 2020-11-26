@@ -22,6 +22,10 @@ MapEditor::MapEditor(SceneValues * values) :
 
 MapEditor::~MapEditor()
 {
+	for (auto e : entityOnHand) {
+		e->Recycle(world);
+		SAFE_DELETE(e);
+	}
 	SAFE_DELETE(world);
 	SAFE_DELETE(brush);
 	SAFE_DELETE(targetMap);
